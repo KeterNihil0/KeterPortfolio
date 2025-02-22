@@ -6,3 +6,8 @@
  - Top down gameplay with implementing a pseudo physics engine
  - Gameboy inspired pixel art and colour palette
  - Shadowmask that simulates limited field of view and vision
+
+# Links to builds:
+ - Animations + Shadows: https://www.dropbox.com/scl/fi/u4g5pw5yf15fxpzqbcvdi/BUILD-animations-no-multiplayer.zip?rlkey=ir0h6057s1nqejndw58zl25lh&st=crtqprun&dl=0
+ - No Animations + Shadows + Multiplayer + Complex Map Gen: https://www.dropbox.com/scl/fi/hpcln816ib98tc3wee061/BUILD-shadows-multiplayer.zip?rlkey=z876fny3esa4687ykf4qkcc6d&st=jkz0b1gf&dl=0
+ - No Graphics + Building: https://www.dropbox.com/scl/fi/25p9tebi056nuev08gfbr/BUILD-nographics-shadow-multiplayer-building.zip?rlkey=7yqsotb61p33q7yey5vkxmtah&st=qcujxngq&dl=0
