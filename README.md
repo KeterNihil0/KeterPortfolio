@@ -4,8 +4,9 @@ This github repo will serve as a portfolio for Gale O'Dowd (Keter), containing s
 ## Warcrimes: The Game
 [Warcrimes: The Game](contents/unity/warcrimes%20builds/info.md).  
 
+## Minecraft Bedrock:
+[Minecraft Bedrock](contents/minecraft/bedrock/info.md).  
+
 ## Minecraft Java:
 [Minecraft Java](contents/minecraft/bedrock/info.md).  
 
-## Minecraft Bedrock:
-[Minecraft Bedrock](contents/unity/warcrimes%20builds/READ.md).  
