@@ -1,1 +1,0 @@
-b-vis/doc-com/index.html
