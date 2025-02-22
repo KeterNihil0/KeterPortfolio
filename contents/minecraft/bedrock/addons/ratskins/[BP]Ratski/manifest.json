@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "An addon that adds rats :3 (Heavily inspired by the work of 'doctor4t)",
+    "name": "[BP] Ratskins!",
+    "uuid":"3ed30de3-ff11-4456-8bd2-f70701cd3146",
+    "version": [1, 0, 17],
+    "min_engine_version": [1, 21, 40]
+  },
+  "modules": [
+    {
+        "description": "...",
+        "type": "data",
+        "uuid": "1b35af30-d9e5-4b37-9801-1a883d8ab4bf",
+        "version": [1, 0, 17]
+    }, 		
+    {
+			"description": "JavaScript module code",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "f050a10f-ca83-4ae6-aa63-030e44ac0197",
+			"version": [1,1,8],
+			"entry": "scripts/RatsMain.js"
+		}
+  ],
+  "dependencies":[
+    {
+    "uuid": "b3938b26-f595-43bd-8642-f66e808fb1f9",
+    "version": [1, 0, 1]
+    },
+    {
+			"module_name": "@minecraft/server",
+			"version": "1.18.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.3.0"
+		}
+  ]
+}

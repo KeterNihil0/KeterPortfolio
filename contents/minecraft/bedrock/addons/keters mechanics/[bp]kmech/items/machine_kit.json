@@ -1,0 +1,20 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "km:machine_kit_efurnace",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 8,
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": "machine_kit",
+            "minecraft:stacked_by_data": true,
+            "minecraft:tags": {
+                "tags": ["km:machine_kit"]
+            }
+        }
+    }
+}

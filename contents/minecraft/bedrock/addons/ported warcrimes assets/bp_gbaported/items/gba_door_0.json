@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "gbaported:gba_door_0",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:icon": "gba_door_0",
+            "minecraft:block_placer": {
+                "block": "gbaported:gba_door_0_bottom",
+                "replace_block_item": true
+            }
+        }
+    }
+}

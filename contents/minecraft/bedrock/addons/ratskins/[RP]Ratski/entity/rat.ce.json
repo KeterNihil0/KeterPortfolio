@@ -1,0 +1,60 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ratskins:rat",
+            
+            "materials": {
+                "eyes": "entity_emissive_alpha",
+
+                "default": "entity_multitexture_alpha_test",
+                
+                "overcoat": "entity_alphatest_change_color"
+                
+            },
+            "textures": {
+
+                "default": "textures/entity/rats/base_coat/white",
+                "base_white": "textures/entity/rats/base_coat/white",
+                "base_grey": "textures/entity/rats/base_coat/grey",
+                "base_black": "textures/entity/rats/base_coat/black",
+                "base_brown": "textures/entity/rats/base_coat/brown",
+                "base_red": "textures/entity/rats/base_coat/red",
+                "base_blue": "textures/entity/rats/base_coat/blue",
+                "base_orange": "textures/entity/rats/base_coat/orange",
+                "base_plague": "textures/entity/rats/base_coat/plague",
+
+                "null":"textures/entity/rats/top_coat/null",
+                "agouti": "textures/entity/rats/top_coat/agouti",
+                "capped": "textures/entity/rats/top_coat/capped",
+                "banded": "textures/entity/rats/top_coat/banded",
+                "near_full": "textures/entity/rats/top_coat/near_full",
+
+                "crash": "textures/entity/rats/base_coat/crash",
+
+                "armour": "textures/entity/rats/rat_armour"
+            },
+            "geometry": {
+                "default": "geometry.rat"
+            },
+            "animations": {
+                "rat.ac": "controller.animation.rat",
+                "idle": "animation.rat.idle",
+                "run": "animation.rat.run",
+                "sit": "animation.rat.sit"
+            },
+            "scripts": {
+				"animate": [
+                    "rat.ac"
+				]
+			},
+            "render_controllers": [
+                "controller.render.rat"
+            ],
+            "spawn_egg": {
+                "base_color": "#2d261e",
+                "overlay_color": "#bd9985"
+            }
+        }
+    }
+}

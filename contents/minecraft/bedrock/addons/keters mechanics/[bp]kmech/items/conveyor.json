@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "km:conveyor",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "conveyor",
+            "minecraft:block_placer": {
+                "block": "km:conveyor",
+                "replace_block_item": true
+            }
+        }
+    }
+}

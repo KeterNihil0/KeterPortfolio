@@ -1,0 +1,20 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_coil"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["WWW","WRW","WWW"],
+        "key": {
+            "W":"km:wire",
+            "R":"km:rod_iron"
+        },
+        "result":[
+            {
+                "item":"km:coil",
+                "count": 2
+            }
+        ]
+    }
+}

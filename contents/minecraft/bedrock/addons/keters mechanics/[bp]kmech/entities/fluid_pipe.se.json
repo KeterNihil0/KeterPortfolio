@@ -1,0 +1,67 @@
+{
+"format_version":"1.20.81",
+"minecraft:entity":{
+    "description":{
+        "identifier":"km:fluid_pipe_se",
+        "is_spawnable":false,
+        "is_summonable":true,
+        "is_experimental":true,
+        "properties": {
+            "km:fluid_stored": {
+                "client_sync": true,
+                "type": "enum",
+                "values": ["none","water","lava","steam"],
+                "default": "none"
+            },
+            "km:fluid_filled": {
+                "client_sync": true,
+                "type": "bool",
+                "default": false
+            }
+        }
+        },
+        "components":{
+            
+            "minecraft:type_family":{"family":[
+                "inanimate",
+                "km_machine",
+                "km_fluid_conductor",
+                "km_pipe_u",
+                "km_pipe_d",
+                "km_pipe_n",
+                "km_pipe_s",
+                "km_pipe_w",
+                "km_pipe_e"]
+            },
+            "minecraft:breathable":{"total_supply":20,"suffocate_time":0,"breathes_water":true,"breathes_solids":true},
+            "minecraft:collision_box":{"height":0,"width":0},
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "filters": [],
+                            "target": "self",
+                            "event": "km:insulate"
+                        }
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance":{"value":999999999,"max":999999999},
+            "minecraft:nameable":{"allow_name_tag_renaming":false},
+            "minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:persistent": {},
+            "minecraft:conditional_bandwidth_optimization": {
+            }
+        },
+        "events":{
+        }
+    }
+}

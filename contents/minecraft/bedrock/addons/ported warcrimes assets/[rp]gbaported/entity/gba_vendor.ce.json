@@ -1,0 +1,21 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "gbaported:gba_vendor_se",
+            "materials": {
+                "default":"entity_alphatest",
+                "outline":"outline"
+            },
+            "textures": {
+                "default": "textures/entity/gba_vendor"
+            },
+            "geometry": {
+                "default": "geometry.gba_vendor"
+            },
+            "render_controllers": [
+                "controller.render.gba_vendor"
+            ]
+        }
+    }
+}

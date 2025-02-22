@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ratskins:chocobo",
+            
+            "materials": {
+                "default": "entity_multitexture_alpha_test"
+            },
+            "textures": {
+                "default": "textures/entity/chocobo/chocobo"
+            },
+            "geometry": {
+                "default": "geometry.chocobo"
+            },
+            "render_controllers": [
+                "controller.render.chocobo"
+            ],
+            "spawn_egg": {
+                "base_color": "#ceb319",
+                "overlay_color": "#df9322"
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+entity.ratskins:rat.name=Rat
+item.spawn_egg.entity.ratskins:rat.name=Spawn Rat
+
+entity.ratskins:degu.name=Degu
+item.spawn_egg.entity.ratskins:degu.name=Spawn Degu

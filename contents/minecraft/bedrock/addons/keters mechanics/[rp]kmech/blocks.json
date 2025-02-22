@@ -1,0 +1,7 @@
+{
+    "format_version":[ 1, 0, 0],
+    "km:wire":{"sound":"snow"},
+    "km:catwalk":{"sound":"copper_grate"},
+    "km:machine_efurnace":{"sound":"copper"},
+    "km:machine_frame":{"sound":"copper"}
+}

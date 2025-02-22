@@ -1,0 +1,24 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_kit_efurnace"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["PPP","PGP","CWC"],
+        "key": {
+            "P":"km:plate_iron",
+            "C":"km:coil",
+            "G":"km:grille",
+            "W":"km:wire"
+        },
+        "assume_symmetry": true,
+        "result":[
+            {
+                "item":"km:machine_efurnace",
+                "count": 1,
+                "data": 1
+            }
+        ]
+    }
+}

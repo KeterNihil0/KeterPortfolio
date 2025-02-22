@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "et",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "tool_wiring_kit": {
+            "textures": "textures/et/items/tools/tool_wiring"
+        }
+    }
+}

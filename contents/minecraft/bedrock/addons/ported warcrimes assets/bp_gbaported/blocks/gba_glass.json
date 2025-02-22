@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "gbaported:gba_glass",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.05
+            },
+            "tag:minecraft:is_pickaxe_item_destructible":{},
+            "minecraft:material_instances": {
+                "*":{
+                    "texture": "gba_glass",
+                    "render_method": "alpha_test_single_sided",
+                    "face_dimming": true,
+                    "ambient_occlusion":false
+                }
+            },
+            "minecraft:light_dampening": 1
+        }
+    }
+}

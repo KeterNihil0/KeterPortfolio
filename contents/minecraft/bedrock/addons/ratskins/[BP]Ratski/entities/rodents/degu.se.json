@@ -1,0 +1,741 @@
+{
+    "format_version":"1.18.10",
+    "minecraft:entity":{
+        "description":{
+            "identifier":"ratskins:degu",
+            "is_spawnable":true,
+            "is_summonable":true,
+            "is_experimental": false,
+
+            "scripts": {
+                "animate": [
+                ]
+            },
+
+            "animations": {
+            },
+            "properties": {
+                "ratskins:order": {
+                    "type": "int",
+                    "range": [-1,10],
+                    "default": -1,
+                    "client_sync": false
+                },
+                "ratskins:sit": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "ratskins:wounded": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                }
+            }
+        },
+
+        "components":{
+
+            "minecraft:type_family": {
+                "family": [
+                    "degu", "mob", "animal", "rodent"
+                ]
+            },
+            
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": true,
+                "always_show": false
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:collision_box": {
+                "height": 0.5,
+                "width": 0.5
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:health": {
+                "value": 4,
+                "max": 4
+            },
+            "minecraft:inventory": {
+                "inventory_size": 1,
+                "can_be_siphoned_from": true
+            },
+
+            "minecraft:behavior.random_look_around": {
+                "look_distance": 8,
+                "priority": 8,
+                "probability": 0.01
+            },
+            "minecraft:navigation.walk": {
+                "avoid_damage_blocks": true,
+                "avoid_water": true,
+                "can_path_over_water": true
+            },
+            "minecraft:movement.basic": {
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:can_climb": {},
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 0
+            },
+            "minecraft:behavior.tempt": {
+                "can_get_scared": true,
+                "can_tempt_vertically": true,
+                "items": [
+                    "minecraft:yellow_flower",
+                    "minecraft:red_flower",
+                    "minecraft:wheat_seeds",
+                    "minecraft:melon_seeds",
+                    "minecraft:pumpkin_seeds",
+                    "minecraft:wheat",
+                    "minecraft:double_plant:0"
+                ],
+                "within_radius": 8
+            }
+        },
+
+        "component_groups":{
+
+            "ratskins:diego": { "minecraft:variant": { "value": 0 } },
+
+            "degu_detect_delay": {
+                "minecraft:timer": {
+                  "looping": false,
+                  "time": 5,
+                  "time_down_event": {
+                    "event": "degu_detect_delay_complete"
+                  }
+                }
+            },
+            "degu_detect": {
+                "minecraft:entity_sensor": {
+                    "event_filters": {
+                        "any_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "monster"
+                            }
+                        ]
+                    },
+                    "event": "ratskins:degu_detect",
+                    "sensor_range": 16,
+                    "relative_range": false
+                }
+            },
+
+            "ratskins:debug": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": true
+                }
+            },
+
+
+            "ratskins:wild_degu": {
+
+                "minecraft:tameable": {
+                    "probability": 0.4,
+                    "tame_event": {
+                        "event": "minecraft:on_tame",
+                        "target": "self"
+                    },
+                    "tame_items": [
+                        "minecraft:yellow_flower",
+                        "minecraft:red_flower",
+                        "minecraft:wheat_seeds",
+                        "minecraft:melon_seeds",
+                        "minecraft:pumpkin_seeds",
+                        "minecraft:wheat",
+                        "minecraft:double_plant:0"
+                    ]
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 3
+                }
+            },
+            "ratskins:tamed_degu": {
+                "minecraft:is_tamed": {},
+
+                "minecraft:health": {
+                    "value": 8,
+                    "max": 8
+                },
+
+                "minecraft:interact": {
+                    "interactions": [
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "==",
+                                            "value": "ratskins:tiny_armour"
+                                        },
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": false
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:equip_armour",
+                                "target": "self"
+                            }
+                        },
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "any",
+                                            "operator": "==",
+                                            "value": "ratskins:farewells"
+                                        },
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": true
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:farewell",
+                                "target": "self"
+                            },
+                            "interact_text": "Say farewell to your rat?"
+                        },
+   
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "==",
+                                            "value": "ratskins:hamlin_pipe"
+                                        },
+                                        {
+                                            "test": "bool_property",
+                                            "domain": "ratskins:wounded",
+                                            "subject": "self",
+                                            "operator": "==",
+                                            "value": false
+                                        },         
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": false
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:order_change",
+                                "target": "self"
+                            }
+                        },
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "bool_property",
+                                            "domain": "ratskins:wounded",
+                                            "subject": "self",
+                                            "operator": "==",
+                                            "value": false
+                                        }, 
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "!=",
+                                            "value": "ratskins:hamlin_pipe"
+                                        }
+                                    ]
+                                }
+                            },
+                            "give_item":true,
+                            "take_item": true
+                        },
+                        
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_family",
+                                            "subject": "other",
+                                            "value": "player"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "==",
+                                            "value": "ratskins:phoenix_down"
+                                        },
+                                        {
+                                            "test": "bool_property",
+                                            "subject": "self",
+                                            "domain": "ratskins:wounded",
+                                            "operator": "==",
+                                            "value": true
+                                        },                                        
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": true
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:healed",
+                                "target": "self"
+                            },
+                            "use_item": true
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "test": "actor_health",
+                                    "subject": "self",
+                                    "value": 1,
+                                    "operator": "<="
+                                },
+                                "event": "ratskins:fatal",
+                                "target": "self"
+                            },
+                            "deals_damage": false
+                        },
+                        {
+                            "on_damage": { 
+				                "filters": {
+					                "test": "bool_property", "subject": "self", "domain":"ratskins:armoured", "value": true}
+                            },
+                            "damage_multiplier": 0.4
+                        },
+                        {
+                            "cause": "fall",
+                            "deals_damage": false
+                        }
+                    ]
+                }
+
+            },
+            "ratskins:wounded": {
+                "minecraft:behavior.follow_owner": {
+                    "start_distance": 5,
+                    "stop_distance": 1,
+                    "can_teleport": true,
+                    "priority": 9,
+                    "speed_multiplier": 1
+                },
+                "minecraft:behavior.move_to_block": {
+                    "start_chance": 1,
+                    "search_range": 32,
+                    "goal_radius": 0.5,
+                    "stay_duration": -1,
+                    "target_blocks": [
+                        "ratskins:rodent_nest"
+                    ],
+                    "priority": 0,
+                    "target_offset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "target_selection_method": "nearest"
+                }
+            },
+            "ratskins:healed": {
+                "minecraft:health": {
+                    "value": 8
+                }
+            },
+
+            "ratskins:order_stay": {
+                "minecraft:behavior.move_to_block": {
+                    "start_chance": 1,
+                    "search_range": 8,
+                    "goal_radius": 0.5,
+                    "stay_duration": 2,
+                    "target_blocks": [
+                        "minecraft:grass",
+                        "minecraft:dirt",
+                        "minecraft:sand"
+                    ],
+                    "priority": 0,
+                    "target_offset": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.4
+                }
+            },
+            "ratskins:order_follow": {
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.4
+                },
+                "minecraft:behavior.follow_owner": {
+                    "start_distance": 8,
+                    "stop_distance": 2,
+                    "can_teleport": true,
+                    "priority": 5
+                },
+                "minecraft:behavior.go_and_give_items_to_owner": {
+                    "priority": 4,
+                    "run_speed": 1,
+                    "throw_sound": "item_thrown",
+                    "on_item_throw": [
+                      {
+                        "event": "degu_detect_delay",
+                        "target": "self"
+                      }
+                    ]
+                },
+                "minecraft:behavior.move_to_block": {
+                    "start_chance": 0.02,
+                    "search_range": 8,
+                    "goal_radius": 1.25,
+                    "stay_duration": 2,
+                    "target_blocks": [
+                        "minecraft:grass"
+                    ],
+                    "target_offset": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "priority": 13,
+                    "on_stay_completed": {"event": "ratskins:degu_dignow", "target": "self"}
+                }
+            },
+
+            "ratskins:degu_dignow": {
+                "minecraft:behavior.eat_block": {
+                    "time_until_eat": 1,
+                    "eat_and_replace_block_pairs": [
+                        {
+                            "eat_block": "minecraft:grass",
+                            "replace_block": "minecraft:dirt"
+                        },
+                        {
+                            "eat_block": "minecraft:dirt",
+                            "replace_block": "minecraft:dirt"
+                        },
+                        {
+                            "eat_block": "minecraft:sand",
+                            "replace_block": "minecraft:sand"
+                        }
+                    ],
+                    "on_eat": {"event": "ratskins:degu_digdone", "target": "self"},
+                    "priority": 0,
+                    "success_chance": 1
+                }
+            }
+        },
+
+        "events":{
+            "ratskins:debug": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:debug"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "ratskins:wild_degu"
+                            ]
+                        }
+                    },
+                    {
+                        "randomize": [
+                            {"weight": 40, "add": {"component_groups": [
+                                "ratskins:diego"
+                            ]}}
+                        ]
+                    }
+                ]
+            },
+            "minecraft:on_tame": {
+                "set_property": {"ratskins:order": 1},
+                "remove": {
+                    "component_groups": [
+                        "ratskins:wild_degu"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ratskins:tamed_degu",
+                        "ratskins:order_follow",
+                        "degu_detect"
+                    ]
+                }
+            },
+
+            "degu_detect_delay": {
+                "remove": {
+                  "component_groups": [
+                    "degu_detect"
+                  ]
+                },
+                "add": {
+                  "component_groups": [
+                    "degu_detect_delay"
+                  ]
+                }
+            },
+            "degu_detect_delay_complete": {
+                "remove": {
+                  "component_groups": [
+                    "degu_detect_delay"
+                  ]
+                },
+                "add": {
+                  "component_groups": [
+                    "degu_detect"
+                  ]
+                }
+            },
+
+            "ratskins:order_change": {
+                "sequence": [
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":0}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_stay"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_follow"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "titleraw @p[r=4] actionbar {\"rawtext\":[{\"text\":\"Degu is now staying\"}]}",
+                                "particle ratskins:rat_stay ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 1,
+                            "ratskins:sit": true
+                        }
+                    },
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":1}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_follow"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_stay"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "titleraw @p[r=4] actionbar {\"rawtext\":[{\"text\":\"Degu is now following\"}]}",
+                                "particle ratskins:rat_follow ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 0,
+                            "ratskins:sit": false
+                        }
+                    }
+                ]
+            },
+
+            "ratskins:fatal": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:order_stay",
+                        "ratskins:wounded"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        
+                        "ratskins:order_stay",
+                        "ratskins:order_follow",
+
+                        "ratskins:healed"
+                    ]
+                },
+                "queue_command": {
+                    "command":"particle ratskins:rat_hurt ~ ~ ~"
+                },
+                "set_property": {
+                    "ratskins:order": -1,
+                    "ratskins:wounded": true,
+                    "ratskins:sit": true
+                }
+            },
+            "ratskins:healed": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:healed",
+                        "ratskins:order_follow",
+                        "degu_detect"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "ratskins:wounded"
+                    ]
+                },
+                "queue_command": {
+                    "command":[
+                        "particle ratskins:phoenix_down ~ ~ ~",
+                        "playsound random.totem @a[r=10] ~ ~ ~ 1.00"
+                    ]
+                },
+                "set_property": {
+                    "ratskins:wounded": false,
+                    "ratskins:sit": false,
+                    "ratskins:order":0
+                }
+            },
+            "ratskins:degu_detect": {
+                "queue_command": {
+                    "command":[
+                        "effect @e[family=monster,r=10] slowness 5 5 true",
+                        "playsound \"mob.rabbit.hurt\" @a[family=player,r=8] ~ ~ ~ 1 1",
+                        "execute at @e[family=monster, family=!degu_screech, r=10] anchored eyes run summon ratskins:degu_screech ~~~"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "degu_detect_delay"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "degu_detect"
+                    ]
+                }
+            },
+            "ratskins:degu_dignow": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:degu_dignow"
+                    ]
+                }
+            },
+            "ratskins:degu_digdone": {
+                "remove": {
+                    "component_groups": [
+                        "ratskins:degu_dignow"
+                    ]
+                },
+                "queue_command": {
+                    "command": ["loot spawn ~~~ loot \"ratskins_degu_dig\""]
+                }
+            },
+
+            "ratskins:emit_particle": {
+                "sequence": [
+                    {
+                        "filters": [{"test": "bool_property", "subject": "self", "domain":"ratskins:wounded", "value": true}],
+                        "queue_command": {"command":"particle ratskins:rat_hurt ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 1}],
+                        "queue_command": {"command":"particle ratskins:rat_stay ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 0}],
+                        "queue_command": {"command":"particle ratskins:rat_follow ~ ~ ~"}
+                    }
+                ]
+            }
+        }
+    }
+}

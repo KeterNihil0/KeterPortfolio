@@ -1,0 +1,53 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:fluid_pipe",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:placed": [false,true],
+                    "km:active": [false,true]
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {
+                    "identifier": "geometry.block"
+                },
+                "minecraft:material_instances":{
+                    "*":{
+                        "texture":"null",
+                        "render_method":"alpha_test"
+                    }
+                },
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                },
+                "minecraft:selection_box":{"origin":[-4, 4, -4],"size":[8, 8, 8]},
+                "minecraft:collision_box":{"origin":[-4, 4, -4],"size":[8, 8, 8]},
+
+                "tag:km_machine":{},
+                
+                "tag:km_pipe":{},
+
+                "tag:km_pipes_u":{},
+                "tag:km_pipes_d":{},
+                "tag:km_pipes_n":{},
+                "tag:km_pipes_s":{},
+                "tag:km_pipes_e":{},
+                "tag:km_pipes_w":{}
+            },
+            "permutations":[
+                {
+                    "condition": "query.block_state('km:placed')",
+                    "components": {"minecraft:material_instances":{"*":{"texture":"null","render_method":"alpha_test","ambient_occlusion":false,"face_dimming": false}}}
+                }
+            ]
+        }
+    }
+

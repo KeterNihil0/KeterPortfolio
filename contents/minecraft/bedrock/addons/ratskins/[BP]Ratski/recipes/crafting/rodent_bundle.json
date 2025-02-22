@@ -1,0 +1,21 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ratskins:rodent_bundle"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["WSW",
+                    "WNW",
+                    "WWW"
+        ],
+        "key": {
+            "W": { "item":"minecraft:wool" },
+            "N": { "item": "ratskins:rodent_nest"},
+            "S": {"item": "minecraft:string"}
+        },
+        "result": {
+            "item":"ratskins:bundle"
+        }
+    }
+}

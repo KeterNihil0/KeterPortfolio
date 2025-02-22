@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:crusher_se",
+            "materials": {
+                "inverse": "entity",
+                "default":"entity_alphatest"
+            },
+            "textures": {
+                "default":"textures/entities/crusher"
+            },
+            "geometry": {
+                "default":"geometry.crusher"
+            },
+            "render_controllers": [
+                    "controller.render.crusher"
+            ],
+            "animations": {
+                "active": "animation.crusher.active",
+                "removed": "animation.efurnace.removed"
+            },
+            "scripts": {
+                "animate": [
+                    "active",
+                    "removed"
+                ]
+            },
+            "enable_attachables": false,
+            "hide_armor": false,
+            "spawn_egg": {
+                "base_color": "#FFFFFF",
+                "overlay_color": "#000000"
+            }
+        }
+    }
+}

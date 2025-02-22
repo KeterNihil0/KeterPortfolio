@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "km:tool_wrench",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": "tool_wrench",
+            "minecraft:hand_equipped": true,
+            "minecraft:durability": {
+                "max_durability": 128
+            }
+        }
+    }
+}

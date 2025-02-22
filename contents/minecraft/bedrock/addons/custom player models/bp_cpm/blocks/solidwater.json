@@ -1,0 +1,37 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "cpm:swater",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states":{
+                "cpm:tick":{
+                    "values": {"min":0, "max":7}
+                }
+            }
+        },
+        "components": {
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "can_contain_liquid": true
+                    }
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {"render_method": "alpha_test", "texture": "invisible"}
+            },
+            "minecraft:geometry":{
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:tick": {
+                "interval_range": [10,10]
+            },
+            "minecraft:custom_components": [
+                "cpm:swater_tick"
+            ]
+        }
+    }
+}

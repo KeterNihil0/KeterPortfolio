@@ -1,0 +1,57 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:machine_frame",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:stage":[true,false]
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {
+                    "identifier": "minecraft:geometry.full_block"
+                },
+                "minecraft:material_instances":{
+                    "*":{
+                        "texture":"machine_frame",
+                        "render_method":"opaque"
+                    }
+                },
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0.1
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                }
+            },
+            "permutations": [
+                {
+                    "condition": "!q.block_state('km:stage')",
+                    "components": {
+                        "minecraft:material_instances":{
+                            "*":{
+                                "texture":"machine_frame",
+                                "render_method":"alpha_test"
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": "q.block_state('km:stage')",
+                    "components": {
+                        "minecraft:material_instances":{
+                            "*":{
+                                "texture":"machine_frame",
+                                "render_method":"alpha_test"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+

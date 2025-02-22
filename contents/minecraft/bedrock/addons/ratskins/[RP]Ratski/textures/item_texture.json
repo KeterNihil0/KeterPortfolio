@@ -1,0 +1,30 @@
+{
+    "resource_pack_name": "ratskins",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "hamlin_pipe": {
+            "textures": "textures/items/hamlin_pipe"
+        },
+        "tiny_armour": {
+            "textures": "textures/items/tiny_armour"
+        },
+        "phoenix_down": {
+            "textures": "textures/items/phoenix_down"
+        },
+        "rodent_bundle": {
+            "textures": "textures/items/rodent_bundle"
+        },
+        "farewells": {
+            "textures": "textures/items/farewell"
+        },
+        "truffle": {
+            "textures": "textures/items/truffle"
+        },
+        "hearty_truffle": {
+            "textures": "textures/items/hearty_truffle"
+        },
+        "odd_truffle": {
+            "textures": "textures/items/odd_truffle"
+        }
+    }
+}

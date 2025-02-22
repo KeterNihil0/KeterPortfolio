@@ -1,0 +1,35 @@
+{
+
+    "format_version": "1.20.30",
+
+    "minecraft:item": {
+
+        "description": {
+
+            "identifier": "ratskins:truffle_odd",
+
+            "menu_category": {
+
+                "category": "nature"
+
+            },
+
+            "is_experimental": false
+
+        },
+
+        "components": {
+
+            "minecraft:icon": "odd_truffle",
+
+            "minecraft:display_name": {
+
+                "value": "Odd Truffle"
+
+            }
+
+        }
+
+    }
+
+}

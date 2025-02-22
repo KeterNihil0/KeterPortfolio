@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "cpm:transform"
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": ["transform"]
+            },
+            "minecraft:wearable": {
+                "slot": "slot.armor.head"
+            },
+            "minecraft:icon": "transform_item"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "[RP] Custom Player Models",
+        "description": "...",
+        "uuid": "8768867d-ab96-41bc-9ba2-0c078ef513eb",
+        "version": [1, 0, 1],
+        "min_engine_version": [ 1, 21, 40 ]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "resources",
+            "uuid": "ed0fdd3b-d31d-4a92-8e9e-2eaa477b6928",
+            "version": [1, 0, 1]
+        }
+    ]
+}

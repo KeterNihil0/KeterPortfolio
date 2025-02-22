@@ -1,0 +1,22 @@
+{
+    "format_version": "1.20.30",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ratskins:truffle_hearty",
+            "menu_category": {
+                "category": "nature"
+            },
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:icon": "hearty_truffle",
+            "minecraft:display_name": {
+                "value": "Hearty Truffle"
+
+            }
+
+        }
+
+    }
+
+}

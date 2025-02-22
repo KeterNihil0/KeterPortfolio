@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "sec_cams:camera_entity",
+            "materials": {
+                "default":"entity_alphatest_one_sided",
+                "hood":"entity_alphatest"
+            },
+            "textures": {
+                "default":"textures/entity/camera_entity"
+            },
+            "geometry": {
+                "default":"geometry.camera"
+            },
+            "animations": {
+                "cam_anims": "animation.camera.rotation"
+            },
+            "scripts": {
+                "animate":["cam_anims"]
+            },
+            "render_controllers": [
+                "controller.render.camera"
+            ]
+        }
+    }
+}

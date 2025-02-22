@@ -1,0 +1,21 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "ratskins:truffle_feature"
+		},
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:grass"
+				],
+				"block_whitelist": [
+					"minecraft:air"
+				]
+			}
+		},
+		"structure_name": "ratskins:truffle_tree"
+		
+    }
+}

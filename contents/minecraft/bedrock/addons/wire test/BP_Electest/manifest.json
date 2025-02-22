@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "B_Electest",
+        "description": "...",
+        "uuid": "e7a2f88c-5232-434b-bdba-e393630f92a1",
+        "version": [1, 0, 1],
+        "min_engine_version": [ 1, 21, 40 ]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "data",
+            "uuid": "1b8da5c1-4406-4581-8491-1239ccced38d",
+            "version": [1, 0, 1]
+        },
+        {
+			"description": "JavaScript module",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "ecdaac8f-65df-4612-8042-e5ce893c71c3",
+			"version": [1,1,8],
+			"entry": "scripts/ELEC_Main.js"
+		}
+    ],
+    "dependencies": [
+        {
+            "module_name":"@minecraft/server",
+            "version": "1.16.0" 
+        }
+    ]
+}

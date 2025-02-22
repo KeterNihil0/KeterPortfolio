@@ -1,0 +1,44 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:stick",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:wheat_seeds",
+                    "weight": 10
+                },                
+                {
+                    "type": "item",
+                    "name": "minecraft:string",
+                    "weight": 8
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:flint",
+                    "weight": 6
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:clay_ball",
+                    "weight": 5
+                },                
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_nugget",
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_nugget",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

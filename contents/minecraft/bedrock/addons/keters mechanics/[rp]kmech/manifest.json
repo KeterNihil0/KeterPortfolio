@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+      "description": "Resource pack for 'Keter's Mechanics'",
+      "name": "[RP] Keter's Mechanics",
+      "uuid": "68536b94-a7de-4ab3-bbd1-7ebd323bf21e",
+      "version": [1, 0, 1],
+      "min_engine_version": [1, 21, 40]
+     },
+    "modules": [
+      {
+        "description": "...",
+        "type": "resources",
+        "uuid": "cd6b2e96-b7ea-42cb-9580-eea545be598c",
+        "version": [1, 0, 1]
+      }
+    ]
+   }

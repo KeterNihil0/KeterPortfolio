@@ -1,0 +1,22 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_tool_cutters"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["P P"," I ","S S"],
+        "key": {
+            "P":"km:plate_iron",
+            "I":"minecraft:iron_ingot",
+            "S":"minecraft:stick"
+        },
+        "assume_symmetry": true,
+        "result":[
+            {
+                "item":"km:tool_cutters",
+                "count": 1
+            }
+        ]
+    }
+}

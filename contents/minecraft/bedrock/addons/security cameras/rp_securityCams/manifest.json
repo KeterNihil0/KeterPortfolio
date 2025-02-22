@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "[RP] Security Cams",
+        "description": "Resource pack for '[B] Security Cams'",
+        "uuid": "8987739d-0db4-468e-933f-977bf7cdc3df",
+        "version": [1, 0, 1],
+        "min_engine_version": [ 1, 21, 40 ]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "resources",
+            "uuid": "c674aeac-affd-4a3f-95f5-6bdf92ed0003",
+            "version": [1, 0, 1]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.wire": {
+            "arrays": {
+                "textures": {
+                    "Array.state":[
+                        "texture.invalid",
+                        "texture.valid",
+                        "texture.invis"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.state[q.property('et:wire_valid')+((2-q.property('et:wire_valid'))*0)]"
+            ],
+            "materials": [{"*": "material.default"}],
+            "geometry": "geometry.default",
+            "part_visibility": [
+                {"*":true}
+            ]
+        }
+    }
+}

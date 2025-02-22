@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.machine_efurnace": {
+            "initial_state": "inactive",
+            "states": {
+                "inactive": {
+                    "transitions": [
+                        {
+                            "cancel_animation": "!q.is_alive"
+                        },
+                        {
+                            "inactive": "q.property('km:active')"
+                        }
+                    ],
+                    "animations": ["animation.efurnace.inactive"]
+                },
+                "active": {
+                    "transitions": [
+                        {
+                            "cancel_animation": "!q.is_alive"
+                        },
+                        {
+                            "inactive": "!q.property('km:active')"
+                        }
+                    ],
+                    "animations": ["animation.efurnace.active"]
+                },
+                "cancel_animation": {
+                    "animations": ["animation.efurnace.removed"],
+                    "transitions": [
+                        {
+                            "inactive": "q.is_alive && q.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

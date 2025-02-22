@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "R_Electest",
+        "description": "...",
+        "uuid": "e5e86668-d0a8-4702-a24d-a47adfe8f922",
+        "version": [1, 0, 1],
+        "min_engine_version": [ 1, 21, 40 ]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "resources",
+            "uuid": "35b999d0-bc1d-45d9-9d1c-6a01a9f05bff",
+            "version": [1, 0, 1]
+        }
+    ]
+}

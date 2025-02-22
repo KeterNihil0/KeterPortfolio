@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ratskins:hamlin_guide",
+            "materials": {
+                "default":"entity_multitexture_alpha_test",
+                "note":"entity_multitexture_alpha_test"
+            },
+            "textures": {
+                "suv_zero":"textures/entity/tools/hamlin_guide",
+
+                "suv_one":"textures/entity/tools/suv_one",
+                "suv_two":"textures/entity/tools/suv_two",
+                "suv_three":"textures/entity/tools/suv_three",
+                "suv_four":"textures/entity/tools/suv_four",
+
+                "note":"textures/entity/tools/note"
+            },
+            "geometry": {
+                "default":"geometry.hamlin_guide"
+            },
+            "render_controllers": [
+                "controller.render.hamlin_guide"
+            ],
+            "animations": {
+                "hamlin_guide.ac": "controller.animation.hamlin_guide",
+                "notes": "animation.hamlin_guide.notes"
+            },
+            "scripts": {
+				"animate": [
+                    "hamlin_guide.ac"
+				]
+			}
+        }
+    }
+}

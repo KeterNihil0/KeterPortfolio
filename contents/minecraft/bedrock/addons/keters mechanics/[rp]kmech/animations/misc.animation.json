@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.misc.machineOffset": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0,-0.15,0]
+				}
+			}
+		},
+		"animation.misc.removed": {
+			"loop": true,
+			"bones": {
+				"root": {
+                    "scale" : [ "q.is_alive", "q.is_alive", "q.is_alive" ]
+				}
+			}
+		}
+    }
+}

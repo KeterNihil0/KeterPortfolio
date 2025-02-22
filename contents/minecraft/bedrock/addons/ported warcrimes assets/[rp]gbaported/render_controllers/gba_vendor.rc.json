@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.gba_vendor": {
+            "materials": [
+                {
+                    "root": "material.default",
+                    "outline": "material.outline"
+                }
+            ],
+            "textures": [
+                "texture.default"
+            ],
+            "geometry": "geometry.default",
+            "part_visibility": [
+                {
+                    "*":true
+                }
+            ]
+        }
+    }
+}

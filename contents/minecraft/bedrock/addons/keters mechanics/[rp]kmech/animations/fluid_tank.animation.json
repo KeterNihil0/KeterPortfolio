@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fluid_tank.level": {
+			"loop": true,
+			"bones": {
+				"fluid": {
+					"position": [0, 0, 0],
+					"scale": [1, "q.property('ms:tank_water')/8000", 1]
+				}
+			}
+		}
+	}
+}

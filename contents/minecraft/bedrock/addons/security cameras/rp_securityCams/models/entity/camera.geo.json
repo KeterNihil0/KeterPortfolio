@@ -1,0 +1,57 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.camera",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.5, 1.5, -0.5], "size": [1, 7, 1], "uv": [60, 0]},
+						{"origin": [-1, 1, -1], "size": [2, 2, 9], "uv": [42, 0]}
+					]
+				},
+				{
+					"name": "yaw",
+					"parent": "root",
+					"pivot": [0, 7, 0]
+				},
+				{
+					"name": "pitch",
+					"parent": "yaw",
+					"pivot": [0, 7, 0],
+					"cubes": [
+						{"origin": [-3, 5, -4], "size": [6, 6, 7], "uv": [4, 18]},
+						{
+							"origin": [-1.5, 6.5, -6],
+							"size": [3, 3, 2],
+							"uv": {
+								"north": {"uv": [2, 2], "uv_size": [3, 3]},
+								"east": {"uv": [0, 2], "uv_size": [2, 3]},
+								"west": {"uv": [5, 2], "uv_size": [2, 3]},
+								"up": {"uv": [2, 0], "uv_size": [3, 2]},
+								"down": {"uv": [2, 7], "uv_size": [3, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "hood",
+					"parent": "pitch",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 5, -8], "size": [6, 6, 11], "inflate": 0.1, "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

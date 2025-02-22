@@ -1,0 +1,70 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.airshoes.setup": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"position": [3, 0, 0]
+				},
+				"rightitem": {
+					"position": [-1, -2, 0]
+				},
+				"leftArm": {
+					"position": [-3, 0, 0]
+				}
+			}
+		},
+		"animation.airshoes.run": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [20, 0, 0],
+					"position": [0, "math.cos(q.anim_time*v.anim_speed*2)*0.5", 0]
+				},
+				"leftArm": {
+					"rotation": ["-v.anim_speed*80-70", "-v.anim_speed*-45", -45],
+					"position": [0, 0, "-v.anim_speed*4"]
+				},
+				"rightArm": {
+					"rotation": ["v.anim_speed*80-70", "v.anim_speed*45", 45],
+					"position": [0, 0, "v.anim_speed*4"]
+				},
+				"leftLeg": {
+					"rotation": ["v.anim_speed*45+10", "v.anim_speed*10-10", 0]
+				},
+				"rightLeg": {
+					"rotation": ["-v.anim_speed*45+10", "-v.anim_speed*10+10", 0]
+				}
+			}
+		},
+		"animation.airshoes.still": {
+			"loop": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [0, 0, "-((math.cos(query.life_time * 103.2) * 2.865) + 25)"]
+				},
+				"rightarm": {
+					"rotation": [0, 0, "(math.cos(query.life_time * 103.2) * 2.865) + 25"]
+				}
+			}
+		},
+		"animation.airshoes.walk": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [0, 0, "-((math.cos(query.life_time * 103.2) * 2.865) + 25)"]
+				},
+				"rightArm": {
+					"rotation": [0, 0, "(math.cos(query.life_time * 103.2) * 2.865) + 25"]
+				},
+				"leftLeg": {
+					"rotation": ["variable.tcos0", 0, 0]
+				},
+				"rightLeg": {
+					"rotation": ["-variable.tcos0", 0, 0]
+				}
+			}
+		}
+	}
+}

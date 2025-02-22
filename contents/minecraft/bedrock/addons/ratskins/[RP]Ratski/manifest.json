@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+      "description": "Resource pack for 'Ratskins'",
+      "name": "[RP] Ratskins!",
+      "uuid": "b3938b26-f595-43bd-8642-f66e808fb1f9",
+      "version": [1, 0, 1],
+      "min_engine_version": [1, 21, 40]
+     },
+    "modules": [
+      {
+        "description": "...",
+        "type": "resources",
+        "uuid": "e56a76f4-7e08-4b47-9d57-84ad0a541a57",
+        "version": [1, 0, 1]
+      }
+    ]
+   }

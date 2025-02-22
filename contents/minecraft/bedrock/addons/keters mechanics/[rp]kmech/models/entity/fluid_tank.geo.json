@@ -1,0 +1,55 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.fluid_tank",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -7],
+							"size": [14, 16, 14],
+							"inflate": 0.01,
+							"uv": {
+								"north": {"uv": [1, 0], "uv_size": [14, 16]},
+								"east": {"uv": [1, 0], "uv_size": [14, 16]},
+								"south": {"uv": [1, 0], "uv_size": [14, 16]},
+								"west": {"uv": [1, 0], "uv_size": [14, 16]},
+								"up": {"uv": [31, 15], "uv_size": [-14, -14]},
+								"down": {"uv": [31, 15], "uv_size": [-14, -14]}
+							}
+						}
+					]
+				},
+				{
+					"name": "fluid",
+					"parent": "root",
+					"pivot": [0, 1, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -7],
+							"size": [14, 16, 14],
+							"uv": {
+								"north": {"uv": [0, 16], "uv_size": [16, 16]},
+								"east": {"uv": [0, 16], "uv_size": [16, 16]},
+								"south": {"uv": [0, 16], "uv_size": [16, 17]},
+								"west": {"uv": [0, 16], "uv_size": [16, 17]},
+								"up": {"uv": [0, 16], "uv_size": [16, 16]},
+								"down": {"uv": [0, 32], "uv_size": [16, -16]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.efurnace": {
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+
+            "part_visibility": [
+                {"*":false},
+                {"root":true},
+				{"on":"q.property('km:active')"},
+				{"off":"!q.property('km:active')"}
+            ],
+			"is_hurt_color": {
+				"r":0,
+				"g":0,
+				"b":0,
+				"a":0
+			}
+		}
+	}
+}

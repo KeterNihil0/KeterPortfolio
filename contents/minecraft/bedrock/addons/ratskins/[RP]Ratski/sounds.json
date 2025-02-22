@@ -1,0 +1,17 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"ratskins:rat": {
+				"volume": 1,
+				"pitch": [0.9, 1.0],
+				"events": {
+					"ambient": {
+						"sound": "mob.rabbit.hurt",
+						"volume": 1,
+						"pitch": 1
+                    }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.degu_screech": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              { "loop": "(1.0)" }
+            ],
+            "on_entry": ["/execute at @e[family=monster, r=3, c=1] anchored eyes run tp @s ~~0.5~"]
+          },
+          "loop": {
+            "transitions": [
+                { "default": "(1.0)" }
+              ],
+              "on_entry": ["/execute at @e[family=monster, r=3, c=1] anchored eyes run tp @s ~~0.5~"]
+          }
+        }
+      }
+    }
+  }

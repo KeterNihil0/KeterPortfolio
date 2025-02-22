@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "cpm",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "transform_item":{
+            "textures":"textures/items/apple"
+        }
+    }
+}

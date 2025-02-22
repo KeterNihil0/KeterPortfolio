@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "et:fx_wire_se",
+            "materials": {
+                "default":"wire"
+            },
+            "textures": {
+                "valid":"textures/et/entity/fx/wire_valid",
+                "invalid":"textures/et/entity/fx/wire_invalid",
+                "invis":"textures/et/entity/fx/wire_invis"
+            },
+            "geometry": {
+                "default": "geometry.wire"
+            },
+            "render_controllers": [
+                "controller.render.wire"
+            ],
+            "animations": {
+                "visible" :"animation.wire.visible",
+                "invis": "animation.wire.invis"
+            },
+            "scripts": {
+                "animate": ["invis"]
+            },
+            "spawn_egg": {
+                "base_color": "#FFFFFF",
+                "overlay_color": "#000000"
+            }
+        }
+    }
+}

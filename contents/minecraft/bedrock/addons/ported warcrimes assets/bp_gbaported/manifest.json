@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "GBA Ported",
+        "description": "...",
+        "min_engine_version": [1,21,40],
+        "uuid": "cbfb8e98-3c0b-493c-8abf-5c8aa08de597",
+        "version":[1,0,0]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "data",
+            "uuid": "58f57cd0-e0a1-4c36-8a7d-284f2c96633e",
+            "version": [1, 0, 1]
+        },
+        {
+            "description": "JS Module",
+            "language": "javascript",
+            "type": "script",
+            "uuid": "281f1346-5b58-400f-8425-2ea03dd05672",
+            "version": [1,0,0],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.16.0"
+        }
+    ]
+}

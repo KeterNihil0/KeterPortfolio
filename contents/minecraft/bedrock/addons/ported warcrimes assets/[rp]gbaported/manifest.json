@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "GBA Ported",
+        "description": "...",
+        "uuid": "99112d2a-3fc3-4fed-8334-8d151f85cd64",
+        "min_engine_version": [1,21,40],
+        "version":[1,0,0]
+    },
+    "modules": [
+        {
+            "description": "...",
+            "type": "resources",
+            "uuid": "16e227a0-3d5b-4c5e-aaa7-6ba57fe508be",
+            "version": [1, 0, 0]
+        }
+    ]
+}

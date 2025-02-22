@@ -1,0 +1,73 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "sec_cams:camera_entity",
+            "is_experimental": true,
+            "is_spawnable": false,
+            "is_summonable": true,
+            "properties": {
+                "sec_cams:dir": {
+                    "default": 0,
+                    "range": [0, 270],
+                    "type": "int",
+                    "client_sync": true
+                },
+                "sec_cams:pitch": {
+                    "default": 0,
+                    "range": [-45, 45],
+                    "type": "int",
+                    "client_sync": true
+                },
+                "sec_cams:yaw": {
+                    "default": 0,
+                    "range": [-90, 90],
+                    "type": "int",
+                    "client_sync": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "tileEntity"
+                ]
+            },
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": true,
+                "always_show": false
+            },
+            "minecraft:damage_sensor":{
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false,
+                "push_towards_closest_space": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 9999,
+                "max": 9999
+            },
+            "minecraft:breathable": {
+                "breathes_air": true,
+                "breathes_water": true,
+                "breathes_lava": true,
+                "breathes_solids": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "height": 0.001,
+                "width": 0.001
+            }
+        }
+    }
+}

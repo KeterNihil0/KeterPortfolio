@@ -1,0 +1,36 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[BP] Custom Player Models",
+    "description": "...",
+    "uuid":"05a27294-69c8-42c2-aec1-21d1877dde97",
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 40]
+  },
+  "modules": [
+    {
+        "description": "...",
+        "type": "data",
+        "uuid": "5f77ce47-8b6d-4778-8b11-eca842f5f13c",
+        "version": [1, 0, 1]
+    }, 		
+    {
+			"description": "JavaScript module code",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "9c26fd85-b0a7-4cc4-a0eb-2cb2951ea5e7",
+			"version": [1,1,8],
+			"entry": "scripts/main.js"
+		}
+  ],
+  "dependencies":[
+    {
+			"module_name": "@minecraft/server",
+			"version": "1.18.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.3.0"
+		}
+  ]
+}

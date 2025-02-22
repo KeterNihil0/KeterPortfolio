@@ -1,0 +1,97 @@
+{
+"format_version":"1.16.0",
+"minecraft:entity":{
+    "description":{
+        "identifier":"km:wire_se",
+        "is_spawnable":false,
+        "is_summonable":true,
+        "is_experimental":true,
+        "properties": {
+            "km:insulated": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:n": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:s": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:e": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:w": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:u": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:d": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:connections": {
+                "type": "bool",
+                "default": false,
+                "client_sync": true
+            },
+            "km:eu": {
+                "client_sync": true,
+                "type": "int",
+                "default": 0,
+                "range": [0, 9999]
+            },
+            "km:flooded": {
+                "type": "bool",
+                "client_sync": true,
+                "default": false
+            }
+        }
+        },
+        "components":{
+            
+            "minecraft:type_family":{"family":["inanimate","km_machine","km_wire","km_conductor"]},
+            "minecraft:breathable":{"total_supply":20,"suffocate_time":0,"breathes_water":true,"breathes_solids":true},
+            "minecraft:collision_box":{"height":0,"width":0},
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "filters": [],
+                            "target": "self",
+                            "event": "km:insulate"
+                        }
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance":{"value":999999999,"max":999999999},
+            "minecraft:nameable":{"allow_name_tag_renaming":false},
+            "minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:persistent": {},
+            "minecraft:conditional_bandwidth_optimization": {
+            }
+        },
+        "events":{
+        }
+    }
+}

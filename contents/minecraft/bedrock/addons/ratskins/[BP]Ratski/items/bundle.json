@@ -1,0 +1,35 @@
+{
+
+    "format_version": "1.21.40",
+
+    "minecraft:item": {
+
+        "description": {
+
+            "identifier": "ratskins:bundle",
+
+            "menu_category": {
+
+                "category": "equipment"
+
+            }
+
+        },
+
+        "components": {
+
+            "minecraft:icon": "rodent_bundle",
+
+            "minecraft:display_name": {
+
+                "value": "Rodent Bundle"
+
+            },
+
+            "minecraft:max_stack_size": 1
+
+        }
+
+    }
+
+}

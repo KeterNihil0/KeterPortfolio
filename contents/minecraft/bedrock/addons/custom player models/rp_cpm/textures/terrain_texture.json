@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "cpm",
+    "texture_name": "atlas.terrain",
+    "texture_data": {
+        "invisible": {
+            "textures":"textures/entity/chaos_cpm"
+        }
+    }
+}

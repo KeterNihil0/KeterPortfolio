@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.airshoes_v2": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["airshoes_setup", "airshoes_still", "look_at_target"],
+					"transitions": [
+						{"walking": "q.ground_speed > 1.0"},
+						{"fpv": "v.is_first_person"}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations": ["airshoes_setup", "airshoes_walk", "look_at_target"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"},
+						{"airshoes_run": "q.ground_speed > 7"},
+						{"fpv": "v.is_first_person"}
+					],
+					"blend_transition": 0.2
+				},
+				"airshoes_run": {
+					"animations": ["airshoes_setup", "airshoes_run", "look_at_target"],
+					"transitions": [
+						{"walking": "q.ground_speed < 6.5"},
+						{"fpv": "v.is_first_person"}
+					]
+				},
+				"fpv": {
+					"animations": ["first_person_empty_hand"],
+					"transitions": [
+						{"idle": "!v.is_first_person"}
+					]
+				}
+			}
+		}
+	}
+}

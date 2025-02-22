@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.hamlin_guide.notes": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"note1": {
+					"position": [0, "(query.property('ratskins:note1')*4)-16", 0]
+				},
+				"note2": {
+					"position": [0, "(query.property('ratskins:note2')*4)-16", 0]
+				},
+				"note3": {
+					"position": [0, "(query.property('ratskins:note3')*4)-16", 0]
+				},
+				"note4": {
+					"position": [0, "(query.property('ratskins:note4')*4)-16", 0]
+				}
+			}
+		}
+	}
+}

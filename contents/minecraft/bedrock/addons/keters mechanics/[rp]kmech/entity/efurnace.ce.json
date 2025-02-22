@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:efurnace_se",
+            "materials": {
+                "default":"entity_alphatest"
+            },
+            "textures": {
+                "default":"textures/entities/efurnace"
+            },
+            "geometry": {
+                "default":"geometry.efurnace"
+            },
+            "render_controllers": [
+                    "controller.render.efurnace"
+            ],
+            "animations": {
+                "exists":"animation.misc.machineOffset",
+                "removed":"animation.misc.removed",
+                "active":"animation.efurnace.active",
+                "inactive":"animation.efurnace.inactive"
+            },
+            "scripts": {
+                "animate": [
+                    {"removed":"!q.is_alive"},
+                    {"active":"q.property('km:active')"},
+                    {"inactive":"!q.property('km:active')"},
+                    {"exists":"q.is_alive"}
+                ]
+            },
+            "sound_effects": {
+                "efurnace_on":"block.efurnace.active"
+            },
+            "enable_attachables": false,
+            "hide_armor": false
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "resource_pack_name": "ratskins",
+    "texture_name": "atlas.terrain",
+    "padding": 8, 
+    "num_mip_levels": 4, 
+    "texture_data": {
+        "ratskins_rodent_nest": {
+            "textures": "textures/blocks/rodent_nest.png" 
+        },
+        "ratskins_grass_truffle": {
+            "textures":[
+                {"path": "textures/blocks/dirt"}
+            ]
+        }
+    }
+}

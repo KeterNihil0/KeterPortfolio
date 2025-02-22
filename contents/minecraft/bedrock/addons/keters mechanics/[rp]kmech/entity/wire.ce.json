@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:wire_se",
+            "materials": {
+                "default":"entity_alphatest"
+            },
+            "textures": {
+                "uninsulated":"textures/entities/wire",
+                "insulated":"textures/entities/wire_0"
+            },
+            "geometry": {
+                "default":"geometry.wire"
+            },
+            "render_controllers": [
+                    "controller.render.wire"
+            ],
+
+            "animations": {
+                "removed": "animation.misc.removed"
+            },
+
+            "scripts": {
+                "animate": ["removed"]
+            },
+
+            "enable_attachables": false,
+            "hide_armor": false
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "resource_pack_name": "gbaported",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "gba_door_0": {"textures":"textures/items/gba_door_0"}
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "flipbook_texture": "textures/blocks/conveyor",
+    "atlas_tile": "conveyor_anim",
+    "ticks_per_frame": 10,
+    "frames": [0,1]
+  }

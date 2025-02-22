@@ -1,0 +1,25 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.turbine.active": {
+			"initial_state": "off",
+			"states": {
+				"off": {
+					"animations": [
+						{"off": "!q.property('km:active')"}
+					]
+				},
+				"on": {
+					"animations": [
+						{"on": "q.property('km:active')"}
+					],
+					"particle_effects": [
+						{
+							"effect": ""
+						}
+					]
+				}
+			}
+		}
+	}
+}

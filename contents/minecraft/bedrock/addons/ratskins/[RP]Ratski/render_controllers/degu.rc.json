@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.degu": {
+
+            "arrays": {
+                "textures": {
+                    "Array.skins" : [
+                        "texture.diego"
+                    ]
+                }
+            },
+            "geometry": "geometry.default",
+            "materials": [ { "*": "material.default" } ],
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "overlay_color": {
+                "r":1,
+                "g":0,
+                "b":0,
+                "a":"query.property('ratskins:wounded')*0.3"
+            }
+        }
+    }
+}

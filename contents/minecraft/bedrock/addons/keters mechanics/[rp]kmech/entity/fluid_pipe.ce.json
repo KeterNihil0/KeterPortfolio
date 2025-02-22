@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:fluid_pipe_se",
+            "materials": {
+                "default":"entity_alphatest"
+            },
+            "textures": {
+                "default":"textures/entities/pipe"
+            },
+            "geometry": {
+                "default":"geometry.pipe"
+            },
+            "render_controllers": [
+                    "controller.render.fluid_pipe"
+            ],
+            "animations": {
+                "filled":"animation.pipe.fluid",
+                "removed":"animation.misc.removed"
+            },
+            "scripts": {
+                "animate": [
+                    {"removed":"!q.is_alive"},
+                    {"filled":"q.is_alive"}
+                ]
+            },
+            "enable_attachables": false,
+            "hide_armor": false
+        }
+    }
+}

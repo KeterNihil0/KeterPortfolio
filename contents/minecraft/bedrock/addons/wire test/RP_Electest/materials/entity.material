@@ -1,0 +1,11 @@
+{
+    "materials": {
+        "version": "1.0.0",
+        "wire:entity_emissive": {
+            "+defines": [ "USE_EMISSIVE" ],
+            "depthFunc": "Always",
+            "+states": [
+            ]
+        }
+    }
+}

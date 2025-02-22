@@ -1,0 +1,8 @@
+{
+    "resource_pack_name": "sec_cams",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "camera":   { "textures" : "textures/items/camera" },
+        "monitor":   { "textures" : "textures/items/monitor" }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.airshoes": {
+            "initial_state": "standing",
+            "states": {
+                "moving": {
+                    "animations": [
+                        "airshoes_setup",
+                        "airshoes_run",
+                        "look_at_target"
+                    ],
+                    "transitions": [
+                        {"standing":"query.ground_speed<=0.2"}
+                    ]
+                },
+                "standing": {
+                    "animations": [
+                        "airshoes_setup",
+                        "airshoes_still",
+                        "look_at_target"
+                    ],
+                    "transitions": [
+                        {"moving":"query.ground_speed>0.2"}
+                    ]
+                }
+            }
+        }
+    }
+}

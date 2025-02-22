@@ -1,0 +1,57 @@
+{
+    "format_version":"1.21.40",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:catwalk",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:stage":[true,false],
+                    "km:net0": {
+                        "values": {
+                            "min": -1,
+                            "max": 9
+                        }
+                    },
+                    "km:net1": {
+                        "values": {
+                            "min": -1,
+                            "max": 9
+                        }
+                    },
+                    "km:net2": {
+                        "values": {
+                            "min": -1,
+                            "max": 9
+                        }
+                    }
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {
+                    "identifier": "minecraft:geometry.full_block"
+                },
+                "minecraft:material_instances":{
+                    "*":{
+                        "texture":"grille",
+                        "render_method":"alpha_test_single_sided"
+                    }
+                },
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0.1
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                },
+                "minecraft:collision_box":{
+                    "origin": [-8,15,-8],
+                    "size": [16,1,16]
+                }
+            },
+            "permutations": [
+            ]
+        }
+    }
+

@@ -1,0 +1,56 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "et:fx_wire_se",
+            "is_experimental": true,
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "et:wire_length": {
+                    "type": "int",
+                    "default": 1,
+                    "range": [0,320],
+                    "client_sync": true
+                },
+                "et:wire_rot_x": {
+                    "type": "int",
+                    "default": 1,
+                    "range": [0,360],
+                    "client_sync": true
+                },
+                "et:wire_rot_y": {
+                    "type": "int",
+                    "default": 1,
+                    "range": [0,360],
+                    "client_sync": true
+                },
+
+                "et:wire_set": {
+                    "type": "bool",
+                    "client_sync": true,
+                    "default": false
+                },
+
+                "et:wire_valid": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family":{
+                "family": [
+                    "et:wire","inanimate"
+                ]
+            },
+            "minecraft:collision_box": { "height": 0, "width": 0 },
+            "minecraft:knockback_resistance": { "value": 9999,"max": 9999 },
+            "minecraft:health": { "value": 9999, "max": 9999 },
+            "minecraft:physics": { "has_collision": false, "has_gravity": false, "push_towards_closest_space": false },
+            "minecraft:damage_sensor": { "triggers": [{"cause": "all", "deals_damage": "no"}]},
+            "minecraft:cannot_be_attacked": {}
+        }
+    }
+}

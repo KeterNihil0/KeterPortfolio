@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.wire.visible": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"head": {
+					"rotation": [0, "q.property('et:wire_rot_x')*0", 0]
+				},
+				"x_rot": {
+					"rotation": ["q.property('et:wire_rot_y')", 0, 0],
+					"scale": [0.5, "2*q.property('et:wire_length')", 0.5]
+				}
+			},
+			"override_previous_animation": true
+		},
+		"animation.wire.invis": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"head": {
+					"scale": [0, 0, 0]
+				}
+			},
+			"override_previous_animation": false
+		}
+	}
+}

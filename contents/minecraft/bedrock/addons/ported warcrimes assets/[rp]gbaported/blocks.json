@@ -1,0 +1,39 @@
+{
+    "format_version":"1.21.40",
+    "gbaported:gba_wood":{
+        "sound": "wood",
+        "textures": "gba_wood"
+    },
+    "gbaported:gba_grate":{
+        "sound": "copper_grate",
+        "textures": "gba_grate"
+    },
+    "gbaported:gba_grate_1":{
+        "sound": "copper_grate",
+        "textures": "gba_grate_1"
+    },
+    "gbaported:gba_plating":{
+        "sound": "copper",
+        "textures": "gba_plating"
+    },
+    "gbaported:gba_plating_1":{
+        "sound": "copper",
+        "textures": "gba_plating_1"
+    },
+    "gbaported:gba_tile":{
+        "sound": "stone",
+        "textures": "gba_tile"
+    },
+    "gbaported:gba_tile_1":{
+        "sound": "stone",
+        "textures": "gba_tile_1"
+    },
+    "gbaported:gba_hazard":{
+        "sound": "copper",
+        "textures": "gba_hazard"
+    },
+    "gbaported:gba_glass":{
+        "sound": "glass",
+        "textures": "gba_glass"
+    }
+}

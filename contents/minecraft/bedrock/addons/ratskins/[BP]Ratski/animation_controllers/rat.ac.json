@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.rat": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "crash":"query.is_name_any('crash','Crash')"
+            },
+            {
+              "plague":"query.is_name_any('rattus rattus','plague')"
+            }
+          ]
+        },
+        "crash": {
+          "on_entry": ["/event entity @s ratskins:crash", "/say Woah!"],
+          "on_exit": ["/event entity @s ratskins:crash_exit"],
+          "transitions": [
+            {
+              "default":"!query.is_name_any('crash','Crash')"
+            }
+          ]
+        },
+        "plague": {
+          "on_entry": ["/event entity @s ratskins:plague", "/tellraw @a[r=3] {\"rawtext\":[{\"text\":\"That's a big rat...\"}]}"],
+          "transitions": [
+            {
+              "default":"!query.is_name_any('rattus rattus','plague')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "format_version":"1.18.10",
+    "minecraft:entity":{
+        "description": {
+            "is_spawnable": false,
+            "is_summonable": true,
+            "identifier": "ratskins:degu_screech",
+
+            "scripts": {
+                "animate": [
+                    "degu_screech"
+                ]
+            },
+            "animations": {
+                "degu_screech":"controller.animation.degu_screech"
+            }
+        },
+        "components": {
+
+            "minecraft:type_family": {
+                "family": [
+                    "degu_screech"
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0,
+                "width": 0
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            },
+            "minecraft:push_through": {
+                "value": 0
+            },
+            "minecraft:timer": {
+                "time": 2,
+                "looping": false,
+                "time_down_event": {
+                    "event": "ratskins:instant_despawn",
+                    "target": "self"
+                }
+            }
+        },
+        "component_groups": {
+            "ratskins:instant_despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "queue_command": {
+                    "command":[]
+                }
+            },
+            "ratskins:instant_despawn": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:instant_despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

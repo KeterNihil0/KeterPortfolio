@@ -1,0 +1,23 @@
+{
+    "format_version": "1.20.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "km:glider"
+        },
+        "components": {
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": []
+                    }
+                ]
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.glider"
+            },
+            "minecraft:material_instances":{
+                "*": {"texture": "glider","render_method": "opaque"}
+            }
+        }
+    }
+}

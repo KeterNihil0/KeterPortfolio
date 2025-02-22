@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.nayexus.walk": {
+			"loop": true,
+			"blend_weight": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 7.5],
+					"position": [3, 0, 0]
+				},
+				"rightItem": {
+					"rotation": [0, 0, 0],
+					"position": [-1, -2, 0]
+				},
+				"leftArm": {
+					"rotation": [0, 0, -7.5],
+					"position": [-3, 0, 0]
+				}
+			}
+		}
+	}
+}

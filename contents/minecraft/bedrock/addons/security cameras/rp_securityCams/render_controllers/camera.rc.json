@@ -1,0 +1,15 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.camera": {
+            "materials": [
+                {
+                    "*": "material.default",
+                    "hood": "material.hood"
+                }
+            ],
+            "geometry": "geometry.default",
+            "textures": ["texture.default"]
+        }
+    }
+}

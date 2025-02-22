@@ -1,0 +1,39 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:machine_item_transporter",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:placed": [false,true],
+                    "km:active": [false,true]
+                },
+                "traits": {
+                    "minecraft:placement_direction":{
+                        "enabled_states":["minecraft:facing_direction"],
+                        "y_rotation_offset":180
+                    }
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {"identifier": "geometry.item_transporter"}, "minecraft:material_instances":{"*":{"texture":"machine_item_transporter","render_method":"alpha_test","ambient_occlusion":true,"face_dimming": true}},
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                },
+                "tag:km_machine":{}
+            },
+            "permutations":[
+                {
+                    "condition": "query.block_state('km:placed')==true",
+                    "components": {"minecraft:material_instances":{"*":{"texture":"null","render_method":"alpha_test","ambient_occlusion":true,"face_dimming": true}}}
+                }
+            ]
+        }
+    }
+

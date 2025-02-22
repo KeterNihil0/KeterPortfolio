@@ -1,0 +1,41 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:machine_turbine",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:flooded": [false,true],
+                    "km:placed": [false,true]
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {"identifier": "geometry.turbine"}, "minecraft:material_instances":{"*":{"texture":"machine_turbine","render_method":"alpha_test","ambient_occlusion":true,"face_dimming": true}},
+
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                },
+                "tag:km_machine":{},
+
+                "tag:km_conductor":{},
+
+                "tag:km_conducts_n":{},
+                "tag:km_conducts_s":{},
+                "tag:km_conducts_e":{},
+                "tag:km_conducts_w":{}
+            },
+            "permutations": [
+                {
+                    "condition": "query.block_state('km:placed')",
+                    "components": {"minecraft:material_instances":{"*":{"texture":"null","render_method":"alpha_test","ambient_occlusion":true,"face_dimming": true}}}
+                }
+            ]
+        }
+    }
+

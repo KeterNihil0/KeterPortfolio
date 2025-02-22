@@ -1,0 +1,71 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:machine_efurnace",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:flooded": [false,true],
+                    "km:placed": [false,true],
+                    "km:active": [false,true]
+                },
+                "traits": {
+                    "minecraft:placement_direction":{
+                        "enabled_states":["minecraft:cardinal_direction"],
+                        "y_rotation_offset":180
+                    }
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {"identifier": "geometry.efurnace_item"}, "minecraft:material_instances":{"*":{"texture":"machine_efurnace","render_method":"alpha_test","ambient_occlusion":false,"face_dimming": true}},
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":2
+                },
+                "tag:minecraft:iron_tier_destructible": {},
+                "tag:minecraft:is_pickaxe_item_destructible": {},
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.6
+                },
+                "tag:km_machine":{},
+
+                "tag:km_conductor":{},
+
+                "tag:km_conducts_u":{},
+                "tag:km_conducts_d":{}
+            },
+            "permutations":[
+                {
+                    "condition":"query.block_state('minecraft:cardinal_direction')=='north'",
+                    "components":{"minecraft:transformation":{"rotation":[0, 0, 0]}, "tag:km_conducts_s":{}, "tag:km_conducts_e":{}, "tag:km_conducts_w":{}}
+                },
+                {
+                    "condition":"query.block_state('minecraft:cardinal_direction')=='south'",
+                    "components":{"minecraft:transformation":{"rotation":[0, 180, 0]}, "tag:km_conducts_n":{}, "tag:km_conducts_e":{}, "tag:km_conducts_w":{}}
+                },
+                {
+                    "condition":"query.block_state('minecraft:cardinal_direction')=='west'",
+                    "components":{"minecraft:transformation":{"rotation":[0, 90, 0]}, "tag:km_conducts_n":{}, "tag:km_conducts_s":{}, "tag:km_conducts_e":{}}
+                },
+                {
+                    "condition":"query.block_state('minecraft:cardinal_direction')=='east'",
+                    "components":{"minecraft:transformation":{"rotation":[0, 270, 0]}, "tag:km_conducts_n":{}, "tag:km_conducts_s":{}, "tag:km_conducts_w":{}}
+                },
+                {
+                    "condition": "query.block_state('km:placed')",
+                    "components": {"minecraft:material_instances":{"*":{"texture":"null","render_method":"alpha_test","ambient_occlusion":false,"face_dimming": false}}}
+                },
+                {
+                    "condition": "query.block_state('km:active')",
+                    "components": {"minecraft:light_emission": 4}
+                },
+                {
+                    "condition": "!query.block_state('km:active')",
+                    "components": {"minecraft:light_emission": 0}
+                }
+            ]
+        }
+    }
+

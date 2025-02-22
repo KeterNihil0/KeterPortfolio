@@ -1,0 +1,23 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_motor"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["PRP","CIC","PRP"],
+        "key": {
+            "W":"km:wire",
+            "R":"km:rod_iron",
+            "I":"minecraft:iron_ingot",
+            "C":"km:coil",
+            "P":"km:plate_iron"
+        },
+        "result":[
+            {
+                "item":"km:motor",
+                "count": 2
+            }
+        ]
+    }
+}

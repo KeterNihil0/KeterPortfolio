@@ -1,0 +1,27 @@
+{
+    "resource_pack_name":"km",
+    "texture_name":"atlas.items",
+    "texture_data": {
+    
+    "tool_wrench":      {"textures":"textures/.km/textures/items/wrench"},
+    "tool_hammer":      {"textures":"textures/.km/textures/items/hammer"},
+    "tool_cutters":     {"textures":"textures/.km/textures/items/cutters"},
+    "tool_wiringkit":   {"textures":"textures/.km/textures/items/tool_box"},
+    "dust_coal":        {"textures":"textures/.km/textures/items/dust_coal"},
+    "dust_iron":        {"textures":"textures/.km/textures/items/dust_iron"},
+    "dust_copper":      {"textures":"textures/.km/textures/items/dust_copper"},
+    "dust_gold":        {"textures":"textures/.km/textures/items/dust_gold"},
+    "rod_iron":         {"textures":"textures/.km/textures/items/rod_iron"},
+    "grille":           {"textures":"textures/.km/textures/items/grille"},
+    "drill_iron":       {"textures":"textures/.km/textures/items/drill_iron"},
+    "motor":            {"textures":"textures/.km/textures/items/motor"},
+    "plate_iron":       {"textures":"textures/.km/textures/items/plate_iron"},
+    "coil":             {"textures":"textures/.km/textures/items/coil"},
+    "machine_kit":      {"textures":"textures/.km/textures/items/machine_kit"},
+    "wire":             {"textures":"textures/.km/textures/items/wire"},
+    "apple":            {"textures":"textures/items/apple"},
+    "unfired_steel":    {"textures":"textures/.km/textures/items/unfired_steel"},
+    "steel_ingot":      {"textures":"textures/.km/textures/items/steel_ingot"},
+    "conveyor":         {"textures":"textures/blocks/conveyor"}
+    }
+}

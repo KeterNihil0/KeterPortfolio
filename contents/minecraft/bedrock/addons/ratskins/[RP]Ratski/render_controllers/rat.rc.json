@@ -1,0 +1,68 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.rat": {
+
+            "arrays": {
+                "textures": {
+                    
+                    "Array.armour" : [
+                        "texture.null",
+                        "texture.armour"
+                    ],
+                    "Array.base" : [
+                        "texture.base_white",
+                        "texture.base_grey",
+                        "texture.base_black",
+                        "texture.base_brown",
+                        "texture.base_red",
+                        "texture.base_blue",
+                        "texture.base_orange",
+
+
+                        "texture.crash",
+                        "texture.base_plague"
+                    ],
+                    "Array.top" : [
+                        "texture.null",
+                        "texture.agouti",
+                        "texture.capped",
+                        "texture.banded",
+                        "texture.near_full"
+                    ]
+                }
+            },
+            "geometry": "geometry.default",
+            "materials": [ { 
+                "*": "material.default"},
+                {"eyes": "material.eyes"},
+                {"head_overlay": "material.overcoat"},
+                {"body_overlay": "material.overcoat"}
+                
+                ],
+            "textures": [
+                "Array.top[query.property('ratskins:top_coat')]",
+                
+                "Array.base[query.property('ratskins:base_coat')]",
+                "Array.base[query.property('ratskins:base_coat')]"
+            ],
+            "part_visibility": [
+                {"*": true},
+                {"head_armour": "query.property('ratskins:armoured')"},
+                {"body_armour": "query.property('ratskins:armoured')"},
+                {"eyes": "query.property('ratskins:in_dark')"}
+                
+            ],
+            "overlay_color": {
+                "a":"query.property('ratskins:wounded')*0.33",
+                "r":1
+            },
+            "color": {
+                "a":0,
+                "r":"query.property('ratskins:col_r')/100",
+                "g":"query.property('ratskins:col_g')/100",
+                "b":"query.property('ratskins:col_b')/100"
+            }
+        }
+    }
+}

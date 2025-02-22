@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "km:wire",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "wire",
+            "minecraft:block_placer": {
+                "block": "km:wire",
+                "replace_block_item": true
+            }
+        }
+    }
+}

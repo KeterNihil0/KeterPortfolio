@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.hamlin_guide": {
+            "arrays": {
+                "textures": {
+                    "Array.notes" : [
+                        "texture.note"
+                    ],
+                    "Array.suv" : [
+                        "texture.suv_zero",
+
+                        "texture.suv_one",
+                        "texture.suv_two",
+                        "texture.suv_three",
+                        "texture.suv_four"
+                    ]
+                }
+            },
+            "geometry": "geometry.default",
+            "textures": [
+                "Array.suv[query.property('ratskins:suv')]",
+
+                "texture.note",
+
+                "Array.suv[query.property('ratskins:suv')]"
+            ],
+            "materials": [ { 
+                "*": "material.default",
+                "note1": "material.note",
+                "note2": "material.note",
+                "note3": "material.note",
+                "note4": "material.note"
+            }],
+            "part_visibility": [ {
+                "*":"query.property('ratskins:suv') > 0",
+                "note1":"query.property('ratskins:notes_active') > 0",
+                "note2":"query.property('ratskins:notes_active') > 1",
+                "note3":"query.property('ratskins:notes_active') > 2",
+                "note4":"query.property('ratskins:notes_active') > 3"
+            }
+            ]
+        }
+    }
+}

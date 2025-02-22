@@ -1,0 +1,1354 @@
+{
+    "format_version":"1.20.40",
+    "minecraft:entity":{
+        "description":{
+            "identifier":"ratskins:rat",
+            "is_spawnable":true,
+            "is_summonable":true,
+            "is_experimental": true,
+            "runtime_identifier": "warden",
+            "spawn_category": "creature",
+
+            "scripts": {
+                "animate": [
+                    "rat.c"
+                ]
+            },
+
+            "animations": {
+                "rat.c":"controller.animation.rat"
+            },
+            "properties": {
+                "ratskins:order": {
+                    "type": "int",
+                    "range": [-1,10],
+                    "default": -1,
+                    "client_sync": true
+                },
+                "ratskins:in_dark": {
+                    "type": "int",
+                    "range": [0,1],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:sit": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "ratskins:wounded": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "ratskins:tamed": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+
+                "ratskins:top_coat": {
+                    "type": "int",
+                    "range": [0, 40],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:base_coat": {
+                    "type": "int",
+                    "range": [0, 40],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:armoured": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "ratskins:new_entity": {
+                    "type": "bool",
+                    "default": true,
+                    "client_sync": true
+                },
+
+
+                "ratskins:col_r": {
+                    "type": "int",
+                    "range": [0, 100],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:col_g": {
+                    "type": "int",
+                    "range": [0, 100],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:col_b": {
+                    "type": "int",
+                    "range": [0, 100],
+                    "default": 0,
+                    "client_sync": true
+                },
+
+                "ratskins:is_baby": {
+                    "type": "bool",
+                    "client_sync": true,
+                    "default": false
+                },
+                "ratskins:breeding_type": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 1,
+                    "range": [1,2]
+                },
+                "ratskins:mut_factor": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,1]
+                },
+
+                "ratskins:breeding_timer": {
+                    "client_sync": true,
+                    "default": 0,
+                    "type": "int",
+                    "range": [0,200]
+                }
+            }
+        },
+
+        "components":{
+            
+
+            "minecraft:type_family": {
+                "family": [
+                    "rat", "mob", "animal", "rodent", "parrot"
+                ]
+            },
+
+            "minecraft:tameable": {
+                "probability": 0.4,
+                "tame_event": {
+                    "event": "minecraft:on_tame",
+                    "target": "self"
+                },
+                "tame_items": [
+                ]
+            },
+
+            "minecraft:behavior.breed": {
+                "priority": 0,
+                "speed_multiplier": 0.8
+            },
+
+            "minecraft:behavior.follow_mob": {
+                "search_range": 0,
+                "stop_distance": 2
+            },
+
+            "minecraft:equippable": {
+                "slots": [ {"slot": 0}, {"slot": 1}
+                ]
+            },
+
+            "minecraft:environment_sensor": {
+                "triggers": [
+                    {
+                        "event": "ratskins:in_light",
+                        "target": "self",
+                        "filters": {
+                            "test": "light_level",
+                            "operator": ">=",
+                            "value": 6
+                        }
+                    },
+                    {
+                        "event": "ratskins:in_dark",
+                        "target": "self",
+                        "filters": {
+                            "test": "light_level",
+                            "operator": "<=",
+                            "value": 5
+                        }
+                    }
+                ]
+            },
+            
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": true,
+                "always_show": false
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:collision_box": {
+                "height": 0.5,
+                "width": 0.6
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:health": {
+                "value": 8,
+                "max": 8
+            },
+
+            "minecraft:attack": {
+                "damage": 1
+            },
+            "minecraft:inventory": {
+                "inventory_size": 1,
+                "can_be_siphoned_from": true,
+                "private": true,
+                "container_type": "inventory"
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 9,
+                "target_distance": 6.0,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "look_distance": 8,
+                "priority": 8,
+                "probability": 0.01
+            },
+            "minecraft:behavior.open_door": {
+                "close_door_after": false,
+                "priority": 6
+            },
+            "minecraft:behavior.door_interact": {
+                "priority": 6
+            },
+            "minecraft:navigation.walk": {
+                "avoid_damage_blocks": true,
+                "avoid_water": true,
+                "can_path_over_water": true,
+                "can_pass_doors": true,
+                "can_open_doors": true,
+                "can_swim": true
+                
+
+            },
+            "minecraft:movement.basic": {
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:can_climb": {},
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 5
+            },
+            "minecraft:behavior.melee_attack": {
+                "melee_fov": 90,
+                "track_target": true,
+                "reach_multiplier": 2,
+                "attack_once": false,
+                "require_complete_path": true,
+                "cooldown_time": 0,
+                "priority": 2
+            },
+            "minecraft:behavior.tempt": {
+                "can_get_scared": true,
+                "can_tempt_vertically": true,
+                "items": [
+                    "minecraft:apple",
+                    "minecraft:beetroot",
+                    "minecraft:bread",
+                    "minecraft:carrot",
+                    "minecraft:chicken",
+                    "minecraft:cookie",
+                    "minecraft:fish",
+                    "minecraft:melon",
+                    "minecraft:porkchop",
+                    "minecraft:pumpkin_pie",
+                    "minecraft:salmon",
+                    "minecraft:sweet_berries",
+                    "minecraft:glow_berries"
+                ],
+                "within_radius": 8
+            },
+
+
+            "minecraft:conditional_bandwidth_optimization": {
+                "conditional_values": [],
+                "default_values": {}
+            },
+
+            "minecraft:equipment":{
+                "slot_drop_chance": [
+                    {"slot": "slot.weapon.mainhand","drop_chance": 1}
+                ]
+            }
+        },
+
+        "component_groups":{
+
+            "ratskins:farewell": {
+                "minecraft:behavior.avoid_mob_type": {
+                    "priority": 0,
+                    "entity_types": [
+                      {
+                        "filters": {
+                          "any_of": [
+                            { "test": "is_family", "subject": "other", "value": "player" },
+                            { "test": "is_family", "subject": "other", "value": "polarbear" },
+                            { "test": "is_family", "subject": "other", "value": "wolf" },
+                            { "test": "is_family", "subject": "other", "value": "villager" }
+                          ]
+                        },
+                        "max_dist": 16,
+                        "walk_speed_multiplier": 1.1,
+                        "sprint_speed_multiplier": 1.1
+                        
+                      }
+                    ],
+                    "max_dist": 16,
+                    "max_flee": 16,
+                    "on_escape_event": {
+                        "event": "ratskins:debug",
+                        "target": "self"
+                    },
+                    "walk_speed_multiplier": 1
+                },
+                "minecraft:movement.basic": {
+                    "max_turn": 30
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.5
+                }
+            },
+
+            "ratskins:is_baby":{
+                "minecraft:ageable": {
+                    "duration": 1200,
+                    "grow_up": {
+                        "event": "ratskins:grow_up",
+                        "target": "self"
+                    },
+                    "feed_items": [
+                        {"item": "minecraft:apple", "growth": 10},
+                        {"item":"minecraft:beetroot", "growth": 10},
+                        {"item": "minecraft:bread","growth": 10},
+                        {"item": "minecraft:carrot","growth": 10},
+                        {"item": "minecraft:chicken","growth": 20},
+                        {"item": "minecraft:cooked_chicken","growth": 30},
+                        {"item": "minecraft:cookie","growth": 10},
+                        {"item": "minecraft:fish","growth": 20},
+                        {"item": "minecraft:melon","growth": 10},
+                        {"item": "minecraft:porkchop","growth": 20},
+                        {"item": "minecraft:cooked_porkchop","growth": 30},
+                        {"item": "minecraft:pumpkin_pie","growth": 25},
+                        {"item": "minecraft:salmon","growth": 20},
+                        {"item": "minecraft:sweet_berries","growth": 10},
+                        {"item": "minecraft:glow_berries","growth": 30}
+                    ]
+                },
+                "minecraft:scale": {
+                    "value": 0.6
+                },
+                "minecraft:movement": {
+                    "value": 0.3
+                },
+                "minecraft:is_baby": {},
+                "minecraft:tameable": {
+                    "probability": 0,
+                    "tame_items": [
+
+                    ]
+                }
+            },
+            "ratskins:is_adult":{
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:tameable": {
+                    "probability": 0.4,
+                    "tame_event": {
+                        "event": "minecraft:on_tame",
+                        "target": "self"
+                    },
+                    "tame_items": [
+                    ]
+                }
+            },
+
+            "pickup_item_delay": {
+                "minecraft:timer": {
+                  "looping": false,
+                  "time": 1,
+                  "time_down_event": {
+                    "event": "pickup_item_delay_complete"
+                  }
+                }
+            },
+            "pickup_item": {
+                "minecraft:behavior.pickup_items": {
+                  "priority": 1,
+                  "max_dist": 8,
+                  "search_height": 8,
+                  "goal_radius": 1.5,
+                  "speed_multiplier": 1,
+                  "pickup_based_on_chance": false,
+                  "can_pickup_any_item": false,
+                  "can_pickup_to_hand_or_equipment": true,
+                  "pickup_same_items_as_in_hand": true,
+                  "track_target": true
+                }
+            },
+
+            "ratskins:debug": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": true
+                }
+            },
+
+
+            "ratskins:wild_rat": {
+                "minecraft:behavior.stroll_towards_village": {
+                    "cooldown_time": 0,
+                    "goal_radius": 0.5,
+                    "search_range": 32,
+                    "speed_multiplier": 1,
+                    "start_chance": 0.1
+                },
+                "minecraft:behavior.move_to_block": {
+                    "start_chance": 0.05,
+                    "search_range": 32,
+                    "goal_radius": 1.25,
+                    "stay_duration": 1,
+                    "target_blocks": [
+                        "minecraft:chest"
+                    ],
+                    "target_offset": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "priority": 6
+                },
+                "minecraft:behavior.avoid_mob_type": {
+                    "priority": 5,
+                    "entity_types": [
+                      {
+                        "filters": {
+                          "any_of": [
+                            {
+                              "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "player" },
+                                { "test": "is_sneaking", "subject": "other", "operator": "==", "value": false }
+                              ]
+                            },
+                            { "test": "is_family", "subject": "other", "value": "polarbear" },
+                            { "test": "is_family", "subject": "other", "value": "wolf" },
+                            { "test": "is_family", "subject": "other", "value": "villager" }
+                          ]
+                        },
+                        "max_dist": 6,
+                        "walk_speed_multiplier": 1.0,
+                        "sprint_speed_multiplier": 1.0
+                      }
+                    ],
+                    "max_dist": 12,
+                    "max_flee": 8
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 3
+                }
+            },
+            "ratskins:tamed_rat": {
+                "minecraft:is_tamed": {},
+
+                "minecraft:health": {
+                    "value": 8,
+                    "max": 8
+                },
+
+                "minecraft:interact": {
+                    "interactions": [
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "==",
+                                            "value": "ratskins:tiny_armour"
+                                        },
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": false
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:equip_armour",
+                                "target": "self"
+                            }
+                        },
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "any",
+                                            "operator": "==",
+                                            "value": "ratskins:farewells"
+                                        },
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": true
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:farewell",
+                                "target": "self"
+                            },
+                            "interact_text": "Say farewell to your rat?"
+                        },
+
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_owner",
+                                            "subject": "other",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "bool_property",
+                                            "domain": "ratskins:wounded",
+                                            "subject": "self",
+                                            "operator": "==",
+                                            "value": false
+                                        }, 
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "!=",
+                                            "value": "ratskins:hamlin_pipe"
+                                        }
+                                    ]
+                                }
+                            },
+                            "give_item":true,
+                            "take_item": true
+                        },
+                        
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_family",
+                                            "subject": "other",
+                                            "value": "player"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "other",
+                                            "domain": "hand",
+                                            "operator": "==",
+                                            "value": "ratskins:phoenix_down"
+                                        },
+                                        {
+                                            "test": "bool_property",
+                                            "subject": "self",
+                                            "domain": "ratskins:wounded",
+                                            "operator": "==",
+                                            "value": true
+                                        },                                        
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": true
+                                        }
+                                    ]
+                                },
+                                "event": "ratskins:healed",
+                                "target": "self"
+                            },
+                            "use_item": true
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "test": "actor_health",
+                                    "subject": "self",
+                                    "value": 1,
+                                    "operator": "<="
+                                },
+                                "event": "ratskins:fatal",
+                                "target": "self"
+                            },
+                            "deals_damage": false
+                        },
+                        {
+                            "on_damage": { 
+				                "filters": {
+					                "test": "bool_property", "subject": "self", "domain":"ratskins:armoured", "value": true}
+                            },
+                            "damage_multiplier": 0.4
+                        },
+                        {
+                            "cause": "fall",
+                            "deals_damage": false
+                        }
+                    ]
+                }
+            },
+            "ratskins:wounded": {
+                "minecraft:health": {
+                    "value": 1,
+                    "max": 8
+                },
+                "minecraft:behavior.follow_owner": {
+                    "start_distance": 5,
+                    "stop_distance": 1,
+                    "can_teleport": true,
+                    "priority": 0,
+                    "speed_multiplier": 0.2,
+                    "max_distance": 32
+                },
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+                    
+    
+                },
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "ratskins:healed": {
+                "minecraft:health": {
+                    "value": 8,
+                    "max": 8
+                }
+            },
+
+            "ratskins:order_stay": {
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+                    
+    
+                },
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "ratskins:order_follow": {
+                "minecraft:behavior.pickup_items": {
+                    "priority": 1,
+                    "max_dist": 8,
+                    "search_height": 8,
+                    "goal_radius": 1.5,
+                    "speed_multiplier": 1,
+                    "pickup_based_on_chance": false,
+                    "can_pickup_any_item": false,
+                    "can_pickup_to_hand_or_equipment": false,
+                    "pickup_same_items_as_in_hand": true,
+                    "track_target": true
+                  },
+                "minecraft:behavior.hurt_by_target": {
+                    "alert_same_type": false,
+                    "hurt_owner": false,
+                    "priority": 5
+                },
+                "minecraft:behavior.owner_hurt_target": {
+                    "priority": 2
+                },
+                "minecraft:behavior.owner_hurt_by_target": {
+                    "priority": 3
+                },
+                "minecraft:behavior.melee_attack": {
+                    "melee_fov": 90,
+                    "track_target": true,
+                    "reach_multiplier": 2,
+                    "attack_once": false,
+                    "require_complete_path": true,
+                    "cooldown_time": 0.1,
+                    "speed_multiplier": 1.1
+                },
+                
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+                    
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.4
+                },
+                "minecraft:behavior.follow_owner": {
+                    "start_distance": 8,
+                    "stop_distance": 2,
+                    "can_teleport": true,
+                    "priority": 5
+                },
+                "minecraft:behavior.go_and_give_items_to_owner": {
+                    "priority": 2,
+                    "run_speed": 1,
+                    "throw_sound": "item_thrown",
+                    "on_item_throw": [
+                      {
+                        "event": "pickup_item_delay",
+                        "target": "self"
+                      }
+                    ]
+                }
+            },
+            "ratskins:order_harvest": {
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+                    
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.4
+                },
+                "minecraft:home": {
+                    "restriction_radius": 8,
+                    "home_block_list": [
+                        "minecraft:farmland"
+                    ]
+                },
+                "minecraft:behavior.go_home": {
+                    "goal_radius": 3,
+                    "interval": 420,
+                    "priority": 4,
+                    "speed_multiplier": 1   
+                },
+                "minecraft:behavior.harvest_farm_block": {
+                    "max_seconds_before_search": 0.5,
+                    "search_cooldown_max_seconds": 0.5,
+                    "seconds_until_new_task": 0.5,
+                    "search_range": 16,
+                    "priority": 0,
+                    "speed_multiplier": 1
+                }
+            },
+            "ratskins:order_store": {
+                "minecraft:movement.basic": {
+                    "max_turn": 15
+                },
+                "minecraft:jump.static": {},
+                "minecraft:navigation.walk": {
+                    "avoid_damage_blocks": true,
+                    "avoid_water": true,
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_open_doors": true,
+                    "can_swim": true
+                    
+    
+                },
+                "minecraft:movement": {
+                    "value": 0.4
+                },
+                "minecraft:behavior.move_to_block": {
+                    "start_chance": 0.2,
+                    "search_range": 32,
+                    "goal_radius": 1,
+                    "stay_duration": 2,
+                    "target_blocks": [
+                        "ratskins:rodent_nest"
+                    ]
+                }
+            },
+
+
+            "ratskins:has_bred": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                }
+            },
+
+            "ratskins:breedable": {
+                "minecraft:breedable": {
+                    "allow_sitting": false,
+                    "blend_attributes": true,
+                    "breed_cooldown": 30,
+                    "deny_parents_variant": {},
+                    "extra_baby_chance": 0,
+                    "mutation_factor": {},
+                    "causes_pregnancy": false,
+                    "inherit_tamed": true,
+                    "require_full_health": false,
+                    "require_tame": true,
+                    "breeds_with":[
+                        {"baby_type": "",
+                    "mate_type": "ratskins:rat"}
+                    ],
+                    "breed_items":[
+                        "ratskins:truffle",
+                        "ratskins:truffle_hearty",
+                        "ratskins:truffle_odd"
+                    ]
+                }
+            },
+            "ratskins:plague": {
+                "minecraft:scale": {
+                    "value": 1.4
+                },
+                "minecraft:attack": {
+                    "damage": 2,
+                    "effect_name": "poison",
+                    "effect_duration": 5
+                }
+            }
+            
+        },
+
+        "events":{
+
+            "ratskins:in_dark":{
+                "set_property": {
+                    "ratskins:in_dark":1
+                }
+            },
+            "ratskins:in_light":{
+                "set_property": {
+                    "ratskins:in_dark":0
+                }
+            },
+
+            "ratskins:crash":{
+                "set_property": {
+                    "ratskins:base_coat": 7,
+                    "ratskins:top_coat": 0,
+                    "ratskins:col_r": 90,
+                    "ratskins:col_g": 34,
+                    "ratskins:col_b": 16
+                }
+            },
+            "ratskins:plague":{
+                "set_property": {
+                    "ratskins:base_coat": 8,
+                    "ratskins:top_coat": 0,
+                    "ratskins:col_r": 0,
+                    "ratskins:col_g": 0,
+                    "ratskins:col_b": 0
+                },
+                "add": {
+                    "component_groups": [
+                        "ratskins:plague"
+                    ]
+                }
+            },
+            "ratskins:crash_exit":{
+                "set_property": {
+                    "ratskins:base_coat": 6,
+                    "ratskins:top_coat": 0
+                }
+            },
+
+
+            "ratskins:clear_breeding": {
+                "remove": {
+                    "component_groups": [
+                        "ratskins:breedable"
+                    ]
+                },
+                "queue_command": {
+                    "command": "event entity @s ratskins:add_breeding" 
+                }
+            },
+            "ratskins:add_breeding": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:breedable"
+                    ]
+                }
+            },
+
+            "ratskins:farewell": {
+                "remove": {
+                    "component_groups": [
+                        "ratskins:wild_rat",
+                        "ratskins:tamed_rat",
+                        "ratskins:order_follow",
+                        "ratskins:order_stay",
+                        "ratskins:order_harvest",
+                        "ratskins:order_store",
+                        "ratskins:breedable"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ratskins:farewell"
+                    ]
+                },
+                "set_property": {
+                    "ratskins:order": -1
+                }
+            },
+
+            "ratskins:baby_born": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:is_baby"
+                    ]
+                },
+                "set_property": {"ratskins:is_baby":true}
+            },
+
+            "ratskins:grow_up": {
+                "remove": {
+                    "component_groups": [
+                        "ratskins:is_baby"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ratskins:is_adult",
+                        "ratskins:wild_rat",
+                        "ratskins:breedable"
+                    ]
+                },
+                "set_property": {"ratskins:is_baby":false}
+            },
+
+            "ratskins:debug": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:debug"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "ratskins:wild_rat"
+                            ]
+                        }
+                    },
+                    {
+                        "set_property": {
+                            "ratskins:base_coat": "math.random_integer(0, 5)",
+                            "ratskins:top_coat": "math.random_integer(0, 4)"
+                        }
+                    }
+                ]
+            },
+            "minecraft:on_tame": {
+                "set_property": {"ratskins:order": 2, "ratskins:tamed":true},
+                "remove": {
+                    "component_groups": [
+                        "ratskins:wild_rat"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "pickup_item_delay",
+                        "ratskins:tamed_rat",
+                        "ratskins:order_follow",
+                        "ratskins:breedable"
+                    ]
+                },
+                "trigger": { "event": "ratskins:emit_particle", "target": "self"}
+                
+            },
+
+            "pickup_item_delay": {
+                "remove": {
+                  "component_groups": [
+                    "pickup_item"
+                  ]
+                },
+                "add": {
+                  "component_groups": [
+                    "pickup_item_delay"
+                  ]
+                }
+            },
+            "pickup_item_delay_complete": {
+                "remove": {
+                  "component_groups": [
+                    "pickup_item_delay"
+                  ]
+                },
+                "add": {
+                  "component_groups": [
+                    "pickup_item"
+                  ]
+                }
+            },
+
+            "ratskins:order_follow": {
+                "sequence": [
+                    {"filters": [{"all_of": [{"test":"bool_property", "subject":"self", "domain":"ratskins:wounded", "operator":"==", "value":false},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_follow"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_stay",
+                                "ratskins:order_harvest",
+                                "ratskins:order_store"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 2,
+                            "ratskins:sit": false
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_follow ~ ~ ~"
+                            ]
+                        }
+                    }   
+                ]
+            },
+
+            "ratskins:order_stay": {
+                "sequence": [
+                    {"filters": [{"all_of": [{"test":"bool_property", "subject":"self", "domain":"ratskins:wounded", "operator":"==", "value":false},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_stay"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_follow",
+                                "ratskins:order_harvest",
+                                "ratskins:order_store"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 1,
+                            "ratskins:sit": true
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_stay ~ ~ ~"
+                            ]
+                        }
+                    }   
+                ]
+            },
+
+            "ratskins:order_harvest": {
+                "sequence": [
+                    {"filters": [{"all_of": [{"test":"bool_property", "subject":"self", "domain":"ratskins:wounded", "operator":"==", "value":false},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_harvest"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_follow",
+                                "ratskins:order_stay",
+                                "ratskins:order_store"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 3,
+                            "ratskins:sit": false
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_harvest ~ ~ ~"
+                            ]
+                        }
+                    }   
+                ]
+            },
+
+            "ratskins:order_store": {
+                "sequence": [
+                    {"filters": [{"all_of": [{"test":"bool_property", "subject":"self", "domain":"ratskins:wounded", "operator":"==", "value":false},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_store"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_follow",
+                                "ratskins:order_stay",
+                                "ratskins:order_harvest"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 0,
+                            "ratskins:sit": false
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_store ~ ~ ~"
+                            ]
+                        }
+                    }   
+                ]
+            },
+
+            "ratskins:order_change": {
+                "sequence": [
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":0},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_stay"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_store"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_stay ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 1,
+                            "ratskins:sit": true
+                        }
+                    },
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":1},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_follow"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_stay"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_follow ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 2,
+                            "ratskins:sit": false
+                        }
+                    },
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":2},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_harvest"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_follow"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_harvest ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 3,
+                            "ratskins:sit": false
+                        }
+                    },
+                    {
+                        "filters": [{"all_of": [{"test":"int_property", "subject":"self", "domain":"ratskins:order", "operator":"==", "value":3},{"test":"owner_distance","operator": "<","value": 7}]}],
+                        "add": {
+                            "component_groups": [
+                                "ratskins:order_store",
+                                "pickup_item"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "ratskins:order_harvest"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle ratskins:rat_store ~ ~ ~"
+                            ]
+                        },
+                        "set_property": {
+                            "ratskins:order": 0,
+                            "ratskins:sit": false
+                        }
+                    }
+                ]
+            },
+
+            "ratskins:equip_armour": {
+                "set_property": {
+                    "ratskins:armoured": "!query.property('ratskins:armoured')"
+                },
+                "queue_command": {
+                    "command":["say Armour Equiped!"]
+                }
+            },
+
+            "ratskins:fatal": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:wounded"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        
+                        "ratskins:order_stay",
+                        "ratskins:order_follow",
+                        "ratskins:order_harvest",
+                        "ratskins:order_store",
+
+                        "ratskins:healed"
+                    ]
+                },
+                "queue_command": {
+                    "command":["particle ratskins:rat_hurt ~ ~ ~","playsound \"mob.rabbit.death\" @a[r=32] ~ ~ ~ 1 1"]
+                },
+                "set_property": {
+                    "ratskins:order": -1,
+                    "ratskins:wounded": true,
+                    "ratskins:sit": true
+                }
+            },
+            "ratskins:healed": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:healed",
+                        "ratskins:order_follow"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "ratskins:wounded"
+                    ]
+                },
+                "queue_command": {
+                    "command":[
+                        "particle ratskins:phoenix_down ~ ~ ~",
+                        "playsound random.totem @a[r=10] ~ ~ ~ 1.00"
+                    ]
+                },
+                "set_property": {
+                    "ratskins:wounded": false,
+                    "ratskins:sit": false,
+                    "ratskins:order":2
+                }
+            },
+
+            "ratskins:emit_particle": {
+                "sequence": [
+                    {
+                        "filters": [{"test": "bool_property", "subject": "self", "domain":"ratskins:wounded", "value": true}],
+                        "queue_command": {"command":"particle ratskins:rat_hurt ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 1}],
+                        "queue_command": {"command":"particle ratskins:rat_stay ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 2}],
+                        "queue_command": {"command":"particle ratskins:rat_follow ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 3}],
+                        "queue_command": {"command":"particle ratskins:rat_harvest ~ ~ ~"}
+                    },
+                    {
+                        "filters": [{"test": "int_property", "subject": "self", "domain":"ratskins:order", "value": 0}],
+                        "queue_command": {"command":"particle ratskins:rat_store ~ ~ ~"}
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "resource_pack_name": "gbaported",
+    "num_mip_levels": 4,
+    "padding": 0,
+    "texture_name": "atlas.terrain",
+    "texture_data": {
+        "gba_wood": {"textures":"textures/blocks/gba_wood"},
+        "gba_hazard": {"textures":"textures/blocks/gba_hazard"},
+        "gba_glass": {"textures":"textures/blocks/gba_glass"},
+
+        "gba_grate": {"textures":"textures/blocks/gba_grate"},
+        "gba_grate_1": {"textures":"textures/blocks/gba_grate_1"},
+
+        "gba_tile": {"textures":"textures/blocks/gba_tile"},
+        "gba_tile_1": {"textures":"textures/blocks/gba_tile_1"},
+
+        "gba_plating": {"textures":"textures/blocks/gba_plating"},
+        "gba_plating_1": {"textures":"textures/blocks/gba_plating_1"},
+
+        "gba_door_0_top": {"textures":"textures/blocks/gba_door_0_top"},
+        "gba_door_0_bottom": {"textures":"textures/blocks/gba_door_0_bottom"}
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "gbaported:gba_door_0_top",
+            "states": {
+                "gbaported:open": [false,true]
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"]
+                }
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/blocks/gba_door_0.json",
+            "minecraft:geometry": {
+                "identifier": "geometry.gba_door_0_top",
+                "bone_visibility": {"root":true,"open":false,"closed":true}
+            },
+            "minecraft:material_instances": {
+                "*": {"texture": "gba_door_0_top","face_dimming": true,"render_method": "opaque","ambient_occlusion":true}
+            },
+
+            "minecraft:custom_components": ["gbaported:custom_door"],
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.9
+            },
+            "tag:minecraft:is_pickaxe_item_destructible":{},
+            "tag:minecraft:diamond_tier_destructible":{},
+            "minecraft:collision_box":{
+                "origin": [-8,0,-1],
+                "size": [16,16,2]
+            },
+            "minecraft:selection_box":{
+                "origin": [-8,0,-1],
+                "size": [16,16,2]
+            },
+
+            "minecraft:tick": {
+                "interval_range": [0,1],
+                "looping": true
+            },
+            "tag:gbaported:door": {},
+            "tag:gbaported:door_top":{}
+
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north' || q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0,0,0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east' || q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0,90,0]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('gbaported:open')",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.gba_door_0_top",
+                        "bone_visibility": {"root":true,"open":false,"closed":true}
+                    },
+                    "minecraft:collision_box":{
+                        "origin": [-8,0,-1],
+                        "size": [16,16,2]
+                    },
+                    "minecraft:selection_box":{
+                        "origin": [-8,0,-1],
+                        "size": [16,16,2]
+                    },
+                    "minecraft:light_dampening": 15
+                }
+            },
+            {
+                "condition": "q.block_state('gbaported:open')",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.gba_door_0_top",
+                        "bone_visibility": {"root":true,"open":true,"closed":false}
+                    },
+                    "minecraft:collision_box":{
+                        "origin": [0,0,0],
+                        "size": [0,0,0]
+                    },
+                    "minecraft:selection_box":{
+                        "origin": [-8,0,-1],
+                        "size": [16,16,2]
+                    },
+                    "minecraft:light_dampening": 1
+                }
+            }
+        ]
+    }
+}

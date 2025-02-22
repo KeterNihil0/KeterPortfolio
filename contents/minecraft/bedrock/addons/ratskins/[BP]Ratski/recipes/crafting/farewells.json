@@ -1,0 +1,17 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "ratskins:farewells"
+        },
+        "tags": ["crafting_table"],
+        "ingredients": [
+            {"item": "ratskins:bundle"},
+            {"item": "minecraft:stick"},
+            {"item": "minecraft:apple"}
+        ],
+        "result": {
+            "item":"ratskins:farewells"
+        }
+    }
+}

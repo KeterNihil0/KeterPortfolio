@@ -1,0 +1,21 @@
+{
+    "resource_pack_name":"km",
+    "texture_name":"atlas.terrain",
+    "padding":8,
+    "num_mip_levels":4,
+    "texture_data": {
+        "machine_frame":                {"textures":"textures/.km/textures/blocks/machine_frame"},
+        "machine_efurnace":             {"textures":"textures/entities/efurnace"},
+        "machine_crusher":              {"textures":"textures/entities/crusher"},
+        "machine_turbine":              {"textures":"textures/entities/turbine"},
+        "machine_item_transporter":     {"textures":"textures/entities/item_transporter"},
+        
+        "wire":                         {"textures":"textures/.km/textures/blocks/wire"},
+        "grille":                       {"textures":"textures/.km/textures/blocks/grille"},
+        "grille0":                      {"textures":"textures/.km/textures/blocks/grille_0"},
+        "null":                         {"textures":"textures/.km/textures/blocks/null"},
+        "conveyor_anim":                {"textures":"textures/blocks/conveyor"},
+
+        "glider":                       {"textures":"textures/blocks/glider"}
+    }
+}

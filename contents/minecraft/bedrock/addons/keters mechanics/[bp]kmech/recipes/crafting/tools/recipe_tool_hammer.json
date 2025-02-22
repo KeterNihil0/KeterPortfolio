@@ -1,0 +1,20 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_tool_hammer"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["III","ISI"," S "],
+        "key": {
+            "I":"minecraft:iron_ingot",
+            "S":"minecraft:stick"
+        },
+        "result":[
+            {
+                "item":"km:tool_hammer",
+                "count": 1
+            }
+        ]
+    }
+}

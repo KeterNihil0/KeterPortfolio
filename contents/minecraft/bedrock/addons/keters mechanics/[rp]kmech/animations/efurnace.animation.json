@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.efurnace.removed": {
+			"loop": true,
+			"bones": {
+				"root": {
+                    "scale" : [ "q.is_alive", "q.is_alive", "q.is_alive" ]
+				}
+			}
+		},
+		"animation.efurnace.active": {
+			"loop": true,
+			"animation_length": 0.859,
+			"bones": {
+				"root": {
+                    "rotation" : [ 0, "q.property('km:dir')*90", 0 ]
+				},
+				"progress": {
+                    "scale" : [ "q.property('km:progress')+1", 1, 1 ]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "efurnace_on"
+				}
+			}
+		},
+		"animation.efurnace.inactive": {
+			"loop": true,
+			"bones": {
+				"root": {
+                    "rotation" : [ 0, "q.property('km:dir')*90", 0 ]
+				}
+			}
+		}
+	}
+}

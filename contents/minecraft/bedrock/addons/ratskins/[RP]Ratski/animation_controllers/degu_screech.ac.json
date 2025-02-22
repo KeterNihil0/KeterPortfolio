@@ -1,0 +1,11 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.degu_screech": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {}
+			}
+		}
+	}
+}

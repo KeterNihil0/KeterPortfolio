@@ -1,0 +1,47 @@
+{
+    "format_version":"1.21.30",
+    "minecraft:block":{
+        "description":{
+            "identifier":"km:wire",
+            "menu_category":{
+                "category":"items"
+                },
+                "states": {
+                    "km:material":["copper","gold"],
+                    "km:insulated": [false, true],
+                    "km:flooded": [false,true]
+                }
+            },
+            
+            "components":{
+                "minecraft:geometry": {
+                    "identifier": "geometry.block"
+                },
+                "minecraft:material_instances":{
+                    "*":{
+                        "texture":"null",
+                        "render_method":"alpha_test"
+                    }
+                },
+                "minecraft:destructible_by_mining":{
+                    "seconds_to_destroy":0
+                },
+                "minecraft:destructible_by_explosion":{
+                    "explosion_resistance":0.1
+                },
+                "minecraft:selection_box":{"origin":[-4, 4, -4],"size":[8, 8, 8]},
+                "minecraft:collision_box":{"origin":[-4, 4, -4],"size":[8, 8, 8]},
+                "tag:km_machine":{},
+                
+                "tag:km_wire":{},
+
+                "tag:km_conducts_u":{},
+                "tag:km_conducts_d":{},
+                "tag:km_conducts_n":{},
+                "tag:km_conducts_s":{},
+                "tag:km_conducts_e":{},
+                "tag:km_conducts_w":{}
+            }
+        }
+    }
+

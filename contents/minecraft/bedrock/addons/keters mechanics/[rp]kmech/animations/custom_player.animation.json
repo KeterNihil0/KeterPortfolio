@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.glider": {
+			"animation_length": 0.25,
+			"override_previous_animation": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-180, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-180, 0, 0]
+				}
+			}
+		}
+	}
+}

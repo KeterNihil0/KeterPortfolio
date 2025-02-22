@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.degu_screech": {
+            "geometry": "geometry.default",
+            "materials": [ { "*": "material.default" } ],
+            "textures": ["texture.default"],
+            "light_color_multiplier": "(1.0)",
+            "ignore_lighting": true
+            
+        }
+    }
+}

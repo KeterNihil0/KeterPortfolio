@@ -1,0 +1,10 @@
+{
+    "format_version": [ 1, 1, 0 ],
+        "ratskins:rodent_nest": {
+            "sound": "grass"
+        },
+        "ratskins:grass_truffle": {
+            "sound": "grass",
+            "carried_textures":"ratskins_grass_truffle"
+        }
+}

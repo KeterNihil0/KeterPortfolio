@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ratskins:degu_screech",
+            "materials": {
+                "default": "degu_screech"
+            },
+            "textures": {
+                "default": "textures/entity/degus/degu_screech"
+            },
+            "geometry": {
+                "default": "geometry.degu_screech"
+            },
+            "animations": {
+                "degu_screech.ac": "controller.animation.degu_screech"
+            },
+            "scripts": {
+				"animate": [
+                    "degu_screech.ac"
+				]
+			},
+            "render_controllers": [
+                "controller.render.degu_screech"
+            ]
+        }
+    }
+}

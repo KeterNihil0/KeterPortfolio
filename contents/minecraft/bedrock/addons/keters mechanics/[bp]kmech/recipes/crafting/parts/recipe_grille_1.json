@@ -1,0 +1,19 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "km:recipe_grille_1"
+        },
+        "tags": ["crafting_table", "deprecated"],
+        "pattern": ["RR","RR"],
+        "key": {
+            "R":"km:rod_iron"
+        },
+        "result":[
+            {
+                "item":"km:grille",
+                "count": 1
+            }
+        ]
+    }
+}

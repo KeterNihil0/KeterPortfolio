@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[BP] Keter's Mechanics",
+    "description": "An addon that adds Mechanical Stuff",
+    "uuid":"66a669f3-1c0b-4387-8d51-852c8849b1cc",
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 40]
+  },
+  "modules": [
+    {
+        "description": "...",
+        "type": "data",
+        "uuid": "4317b926-1e35-4b2d-b717-88752462a2ce",
+        "version": [1, 0, 1]
+    }, 		
+    {
+			"description": "JavaScript module code",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "48d6f907-6c08-467b-959a-f17296e5f34a",
+			"version": [1,1,8],
+			"entry": "scripts/KMScriptV2.js"
+		}
+  ],
+  "dependencies":[
+    {
+    "uuid": "68536b94-a7de-4ab3-bbd1-7ebd323bf21e",
+    "version": [1, 0, 1]
+    },
+    {
+			"module_name": "@minecraft/server",
+			"version": "1.18.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0"
+		}
+  ]
+}

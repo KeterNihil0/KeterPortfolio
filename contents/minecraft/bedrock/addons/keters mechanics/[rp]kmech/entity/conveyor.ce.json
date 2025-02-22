@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:conveyor_se",
+            "materials": {
+                "default":"custom_animated"
+            },
+            "textures": {
+                "default":"textures/blocks/conveyor"
+            },
+            "geometry": {
+                "default":"geometry.conveyor"
+            },
+            "render_controllers": [
+                    "controller.render.conveyor"
+            ],
+            "enable_attachables": false,
+            "hide_armor": false,
+            "animations": {
+                "active": "animation.conveyor.active"
+            },
+            "scripts": {
+                "animate": [
+                    "active"
+                ]
+            }
+        }
+    }
+}

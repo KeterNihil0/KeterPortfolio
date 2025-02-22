@@ -1,0 +1,79 @@
+{
+    "format_version": "1.20.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ratskins:hamlin_guide",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": true,
+            "runtime_identifier": "warden",
+            "spawn_category": "creature",
+            
+            "properties": {
+                "ratskins:notes_active": {
+                    "type": "int",
+                    "range": [0,5],
+                    "default": 0,
+                    "client_sync": true
+                },
+                "ratskins:note1": {"type": "int","range": [0,4],"default": 0,"client_sync": true},
+                "ratskins:note2": {"type": "int","range": [0,4],"default": 0,"client_sync": true},
+                "ratskins:note3": {"type": "int","range": [0,4],"default": 0,"client_sync": true},
+                "ratskins:note4": {"type": "int","range": [0,4],"default": 0,"client_sync": true},
+                "ratskins:suv": {
+                    "type": "int", 
+                    "range": [0,5], 
+                    "default": 0, 
+                    "client_sync": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": ["hamlin_guide"]
+            },
+            "minecraft:tameable": {
+                "probability": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0,
+                "width": 0
+            },
+            
+            "minecraft:conditional_bandwidth_optimization": {
+                "conditional_values": [],
+                "default_values": {}
+            }
+
+        },
+        "component_groups": {
+            "ratskins:debug": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": true
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "set_property": {
+                    "ratskins:notes_active": 0
+                }
+            },
+            "ratskins:despawn": {
+                "add": {
+                    "component_groups": [
+                        "ratskins:debug"
+                    ]
+                }
+            }
+        }
+    }
+}

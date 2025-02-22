@@ -1,0 +1,13 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "km:cable_se": {
+                "events": {
+                    "death": "mob.drowned.hurt",
+                    "hurt": "mob.drowned.hurt"
+                },
+                "volume": 1
+            }
+        }
+    }
+}

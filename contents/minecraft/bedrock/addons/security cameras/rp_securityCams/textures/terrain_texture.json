@@ -1,0 +1,17 @@
+{
+    "texture_name": "atlas.terrain",
+    "resource_pack_name": "sec_cams",
+    "padding": 8,
+    "num_mip_levels": 4,
+    "texture_data": {
+        "camera_block": {
+            "textures": "textures/items/camera" 
+        },
+        "camera": {
+            "textures": "textures/entity/camera_entity" 
+        },
+        "camera_base": {
+            "textures": "textures/blocks/camera_base" 
+        }
+    }
+}

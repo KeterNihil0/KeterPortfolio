@@ -1,0 +1,41 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "km:turbine_se",
+            "materials": {
+                "default":"entity_alphatest"
+            },
+            "textures": {
+                "default":"textures/entities/turbine"
+            },
+            "geometry": {
+                "default":"geometry.turbine"
+            },
+            "render_controllers": [
+                    "controller.render.turbine"
+            ],
+            "enable_attachables": false,
+            "hide_armor": false,
+            "animations": {
+                "active": "controller.animation.turbine.active",
+                "off":"animation.turbine.off",
+                "on":"animation.turbine.on"
+            },
+            "scripts": {
+                "animate": [
+                    "active",
+                    {
+                        "on":"q.property('km:active')"
+                    },
+                    {
+                        "off":"!q.property('km:active')"
+                    }
+                ]
+            },
+            "particle_effects": {
+                "steam":"km:particle_steam"
+            }
+        }
+    }
+}
