@@ -1,7 +1,8 @@
 # Intro:
  I discovered Minecraft Java edition very early into it's development, and was immediately hooked as I have had an obsession with Lego since early childhood, however often grew frustrated when limited by the physical parts and the cost, therefore discovering a sandbox where you essentially had unlimited Lego pieces, I was very happy. With the advent of Minecraft modding, my joy grew exponentially, not only did we have this virtually infinite sandbox, but now we could tweak it to our own liking? I quickly grew obsessed with technology mods, but desired more, which then inspired me to educate myself so I could incorporate my own ideas.
 # Mod Summaries:  
- ## Bionicraft:  
+ ## Bionicraft/KanohiMC:  
   This mod stems from my childhood obsession with a Lego series known as Bionicle, with it's cool robotic characters, powers and world building. With this mod, I aimed to implement several resources, entities, and primarily, the Kanohi; a plethora of intricate masks which granted the users powers, and would come in a variety of shapes and colours.  
+  Note: I made a mistake during the upload process, Bionicraft was an initial attempt to create the mod using MCreator, however upon finding it limiting, I taught myself soon after how to create the mod from scratch using Eclipse
  ## Jungle of Terrors:  
   This mod began development at the request of my younger siblings, where they suggested I create a zombie covered in vines and a zombie covered in mushrooms. I developed these ideas into an ancient war between fungi and plants (A faction system of sorts). As I was doing my A-Levels at the time, my attention on this project (along with several others) grew thin to the point I forgot
