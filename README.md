@@ -8,5 +8,5 @@ This github repo will serve as a portfolio for Gale O'Dowd (Keter), containing s
 [Minecraft Bedrock](contents/minecraft/bedrock/info.md).  
 
 ## Minecraft Java:
-[Minecraft Java](contents/minecraft/bedrock/info.md).  
+[Minecraft Java](contents/minecraft/java/info.md).  
 
