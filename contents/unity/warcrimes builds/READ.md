@@ -6,6 +6,8 @@
  - Top down gameplay with implementing a pseudo physics engine
  - Gameboy inspired pixel art and colour palette
  - Shadowmask that simulates limited field of view and vision
+ - Easy to edit map generator
+ - Multiple playable entities (Press Z/X)
 
 # Links to builds:
  - Animations + Shadows: https://www.dropbox.com/scl/fi/u4g5pw5yf15fxpzqbcvdi/BUILD-animations-no-multiplayer.zip?rlkey=ir0h6057s1nqejndw58zl25lh&st=crtqprun&dl=0
