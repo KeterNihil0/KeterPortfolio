@@ -1,0 +1,6 @@
+# Intro:
+ After making several Minecraft Java mods, I was growing slightly frustrated with my old computer's struggles to run the game and compile said mods. My brother suggested to me that I try and make addons for Minecraft Bedrock, which I was initially hesitant to commit to as it was a version of the game many who played modded Java saw as inferior and unsupported. I eventually began working on Bedrock addons and was pleasantly suprised to discover how easy and intuitive I found the process, within hours figuring out how to implement entities and items. This interest wavered through the years as I found the component system slightly limiting, however in the past few years, I rediscovered my passion for Bedrock addon development, especially given more data driven systems and the ability to implement scripting.  
+# Addons:
+ ### Ratskins:
+ Ratskins is an addon that blended my love of rats and homage to 'doctor4t', a well known content creator modder for Minecraft. Whilst the initial inspiration for Ratskins stemmed from doctor4ts work, I have made this into my own project, and via scripting adding complex mechanics like "Rat genetics" and a pseudo ui system inspired by 'The Legend of Zelda: Ocarina of Time'.
+
