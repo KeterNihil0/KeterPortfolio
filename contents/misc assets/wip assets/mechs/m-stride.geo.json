@@ -1,0 +1,72 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.geometry.m-stride",
+				"texture_width": 144,
+				"texture_height": 144,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "core",
+					"parent": "root",
+					"pivot": [0, 18, 6],
+					"cubes": [
+						{"origin": [-8, 16, -10], "size": [16, 3, 12], "uv": [0, 29]},
+						{"origin": [-8, 16, 2], "size": [16, 21, 8], "uv": [0, 0]},
+						{"origin": [-5, 19, -8], "size": [10, 3, 11], "pivot": [0, 20, 2], "rotation": [17.5, 0, 0], "uv": [0, 44]},
+						{"origin": [-8.5, 15, -15], "size": [17, 10, 6], "pivot": [-0.5, 17, -12], "rotation": [15, 0, 0], "uv": [0, 58]}
+					]
+				},
+				{
+					"name": "boosters",
+					"parent": "core",
+					"pivot": [0, 29, 10],
+					"cubes": [
+						{"origin": [-5, 25, 9], "size": [10, 10, 12], "pivot": [0, 29, 10], "rotation": [17.5, 0, 0], "uv": [0, 122]},
+						{"origin": [-7, 17, 8], "size": [6, 6, 9], "pivot": [-4, 19, 10], "rotation": [-10.11443, -9.92327, 0.88034], "uv": [46, 129]}
+					],
+					"locators": {
+						"smokem": [0, 33, 21]
+					}
+				},
+				{
+					"name": "leg_Right",
+					"parent": "root",
+					"pivot": [-9, 20.26795, 5],
+					"rotation": [-30, 0, 0],
+					"cubes": [
+						{"origin": [-11, 18.26795, 3], "size": [4, 4, 4], "uv": [95, 3]},
+						{"origin": [-19, 10.26795, -1], "size": [10, 16, 12], "uv": [100, 0]},
+						{"origin": [-17, 10.87564, 10], "size": [6, 5, 4], "uv": [100, 28]}
+					]
+				},
+				{
+					"name": "calf_right",
+					"parent": "leg_Right",
+					"pivot": [-14, 9.54552, 16.9641],
+					"cubes": [
+						{"origin": [-18, 5.54552, 13.9641], "size": [8, 12, 6], "uv": [100, 37]},
+						{"origin": [-16, 11.04552, 19.29423], "size": [4, 4, 2], "uv": [130, 47]}
+					]
+				},
+				{
+					"name": "foot_right",
+					"parent": "calf_right",
+					"pivot": [-14, 7.06347, 16.66506],
+					"cubes": [
+						{"origin": [-19, 3.81347, 8.63397], "size": [10, 3, 11], "pivot": [-14, 6.04552, 17.09808], "rotation": [30, 0, 0], "uv": [100, 55]}
+					]
+				}
+			]
+		}
+	]
+}

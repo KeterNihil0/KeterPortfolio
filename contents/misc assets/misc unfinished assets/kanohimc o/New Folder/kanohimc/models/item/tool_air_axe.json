@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "kanohimc:items/tool_air_axe"
+  }
+}

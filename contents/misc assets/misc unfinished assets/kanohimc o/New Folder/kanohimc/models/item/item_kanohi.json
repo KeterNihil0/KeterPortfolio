@@ -1,0 +1,30 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "kanohimc:items/kanohi_hau"
+  },
+    "display": {
+        "head": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 0.0, -7.0 ],
+            "scale": [ 1, 1, 1 ]
+        }
+	},
+  "overrides": [
+	{ "predicate": { "damage": 0.01}, "model": "item/kanohi/kanohi/red"},
+	{ "predicate": { "damage": 0.02}, "model": "item/kanohi/kanohi/blue"},
+	{ "predicate": { "damage": 0.03}, "model": "item/kanohi/kanohi/brown"},
+	{ "predicate": { "damage": 0.04}, "model": "item/kanohi/kanohi/white"},
+	{ "predicate": { "damage": 0.05}, "model": "item/kanohi/kanohi/green"},
+	{ "predicate": { "damage": 0.06}, "model": "item/kanohi/kanohi/black"},
+	{ "predicate": { "damage": 0.07, "custom_model_data": 0}, "model": "item/kanohi/kanohi/orange"},
+	{ "predicate": { "damage": 0.07, "custom_model_data": 1}, "model": "item/kanohi/kanohi/invis"},
+	{ "predicate": { "damage": 0.08}, "model": "item/kanohi/kanohi/lblue"},
+	{ "predicate": { "damage": 0.09}, "model": "item/kanohi/kanohi/tan"},
+	{ "predicate": { "damage": 0.10}, "model": "item/kanohi/kanohi/lgrey"},
+	{ "predicate": { "damage": 0.11}, "model": "item/kanohi/kanohi/lime"},
+	{ "predicate": { "damage": 0.12}, "model": "item/kanohi/kanohi/grey"},
+	{ "predicate": { "damage": 0.13}, "model": "item/kanohi/kanohi/yellow"},
+	{ "predicate": { "damage": 0.14}, "model": "item/kanohi/kanohi/purple"}
+  ]
+}

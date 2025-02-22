@@ -1,0 +1,95 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lavaturtle",
+				"texture_width": 1024,
+				"texture_height": 1024,
+				"visible_bounds_width": 19,
+				"visible_bounds_height": 6.5,
+				"visible_bounds_offset": [0, 2.75, 0]
+			},
+			"bones": [
+				{
+					"name": "external",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "body",
+					"parent": "external",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{"origin": [-64, 8, -64], "size": [128, 64, 144], "uv": [0, 0]},
+						{"origin": [-48, 72, -54], "size": [96, 8, 112], "uv": [0, 208]},
+						{"origin": [-28, 12, 80], "size": [56, 32, 64], "pivot": [0, 48, 78], "rotation": [-5, 0, 0], "uv": [304, 223]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "external",
+					"pivot": [0, 32, -60],
+					"cubes": [
+						{"origin": [-24, 21, -108], "size": [48, 28, 48], "uv": [0, 449]}
+					]
+				},
+				{
+					"name": "jaw",
+					"parent": "head",
+					"pivot": [0, 28, -70],
+					"cubes": [
+						{"origin": [-22, 14, -105], "size": [44, 14, 44], "uv": [198, 462]}
+					]
+				},
+				{
+					"name": "legRF",
+					"parent": "external",
+					"pivot": [-62, 18, -42],
+					"cubes": [
+						{"origin": [-78, 14, -48], "size": [32, 8, 70], "uv": [0, 328]}
+					]
+				},
+				{
+					"name": "legLF",
+					"parent": "external",
+					"pivot": [62, 18, -42],
+					"cubes": [
+						{"origin": [46, 14, -48], "size": [32, 8, 70], "uv": [0, 328], "mirror": true}
+					]
+				},
+				{
+					"name": "legRM",
+					"parent": "external",
+					"pivot": [-62, 18, 10],
+					"cubes": [
+						{"origin": [-78, 14, 4], "size": [32, 8, 70], "uv": [0, 328]}
+					]
+				},
+				{
+					"name": "legLM",
+					"parent": "external",
+					"pivot": [64, 18, 10],
+					"cubes": [
+						{"origin": [46, 14, 4], "size": [32, 8, 70], "uv": [0, 328], "mirror": true}
+					]
+				},
+				{
+					"name": "legRB",
+					"parent": "external",
+					"pivot": [-62, 18, 62],
+					"cubes": [
+						{"origin": [-75, 14, 51], "size": [26, 6, 70], "uv": [204, 328]}
+					]
+				},
+				{
+					"name": "legLB",
+					"parent": "external",
+					"pivot": [62, 18, 62],
+					"cubes": [
+						{"origin": [48, 14, 51], "size": [26, 6, 70], "uv": [204, 328], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

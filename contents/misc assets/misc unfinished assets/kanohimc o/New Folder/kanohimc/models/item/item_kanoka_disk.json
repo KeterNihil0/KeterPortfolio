@@ -1,0 +1,15 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "kanohimc:items/item_kanoka_disk"
+  }, 
+  "overrides": [
+  	{ "predicate": { "damaged": 0}, "model": "item/kanoka/random"},
+	{ "predicate": { "damage": 0.1}, "model": "item/kanoka/ta"},
+	{ "predicate": { "damage": 0.2}, "model": "item/kanoka/ga"},
+	{ "predicate": { "damage": 0.3}, "model": "item/kanoka/po"},
+	{ "predicate": { "damage": 0.4}, "model": "item/kanoka/ko"},
+	{ "predicate": { "damage": 0.5}, "model": "item/kanoka/le"},
+	{ "predicate": { "damage": 0.6}, "model": "item/kanoka/onu"}
+  ]
+}

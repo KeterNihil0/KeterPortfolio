@@ -1,0 +1,33 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.imp": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"moving": "q.ground_speed > 1.0"},
+						{"sitting": ""}
+					],
+					"blend_transition": 0.2
+				},
+				"moving": {
+					"animations": ["move"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"}
+					],
+					"blend_transition": 0.2
+				},
+				"sitting": {
+					"animations": ["sit"],
+					"transitions": [
+						{"idle": ""}
+					],
+					"blend_transition": 0.4,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

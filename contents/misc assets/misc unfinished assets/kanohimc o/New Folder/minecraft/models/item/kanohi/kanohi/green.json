@@ -1,0 +1,13 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/kanohi/miru/gold"
+    },
+    "display": {
+        "head": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, -1, -7.0 ],
+            "scale": [ 1, 1, 1 ]
+        }
+	}
+}
