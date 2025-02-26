@@ -16,3 +16,7 @@
 ## Wire Test: 
   Primarily a proof of concept, whilst struggling with implementing the flow of electricity into 'Keter's Mechanics', I thought I could add a wiring system not bound to Minecraft's world grid, instead implementing my knowledge of triganometry to allow connections between anchors.  
 
+## Keter's Konstruction:  
+  An actively WIP addon that aims to add new helpful methods for building, currently contains two tools; the Palette Knife which allows for random items to be placed from the hotbar, and the Blob Blaster: A new projectile launching tool that creates blobs of goo. These blobs of goo can be built ontop of (intended for large scale landscaping), or dissolved by a virus for quick and easy removal once the goo has served its purpose. Further down the line I intend to introduce tools that shoot blocks which exclusively stick to the goo, and mechs which can quickly handle large scale construction and demolition.  
+  [Keter's Konstruction Git Page](https://github.com/KeterNihil0/KetersKonstruction).
+
