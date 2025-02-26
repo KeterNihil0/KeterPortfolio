@@ -1,4 +1,5 @@
-This github repo will serve as a portfolio for Gale O'Dowd (Keter), containing several projects I have worked on, ranging from Minecraft Java Mods/Bedrock Addons, Unity Projects and other various assets
+This github repo will serve as a portfolio for Gale O'Dowd (Keter), containing several projects I have worked on, ranging from Minecraft Java Mods/Bedrock Addons, Unity Projects and other various assets  
+(Please note, the misc assets I have provided whilst varied are slightly disorganised)
 
 # Contents:
 ## Warcrimes: The Game
